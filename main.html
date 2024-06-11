@@ -6,9 +6,6 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Main | Lutinex Government</title>
     <style>
-        body {
-            margin: 0;
-        }
         * {
             letter-spacing: -0.15pt;
             font-size: 18px;
@@ -17,6 +14,10 @@
             color: #333;
             line-height: 1.6;
             box-sizing: border-box;
+        }
+        body {
+            transition: 0.25s;
+            margin: 0;
         }
         ::-webkit-scrollbar {
             width: 5px;
@@ -106,6 +107,29 @@
         img {
             vertical-align: middle;
         }
+        #dark {
+            background-color: #202020;
+            color: white;
+        }
+        #dark nav {
+            background-color: #101010;
+            color: white;
+        }
+        #dark a {
+            color: #af32af;
+        }
+        button {
+            background-color: #af32af;
+            color: white;
+            padding: 12px;
+            border: 0;
+            border-radius: 100px;
+            font-weight: bold;
+            margin-top: 1.5%;
+            margin-bottom: 1.5%;
+            margin-left: 35%;
+            font-size: small;
+        }
     </style>
 </head>
 <body>
@@ -114,11 +138,13 @@
             <div class="container">
                 <div class="navbar-header">
                     <a href="main.html" aria-label="Lutinex Government">
-                        <img src="title.png" alt="Lutinex Government" height="75" width="375">
+                        <img src="title-white.png" alt="Lutinex Government" height="75" width="375" id="image">
                     </a>
                 </div>
                 <div class="navbar-right">
-    
+                    <button class="theme">
+                        Change Theme
+                    </button>
                 </div>
             </div>
         </nav>
@@ -128,5 +154,26 @@
         <a href="laws.html">Laws</a>
     </p>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const button = document.querySelector(".theme");
+        const img = document.getElementById("image");
+        const body = document.body;
+    
+        button.addEventListener("click", function() {
+            if (img.src.includes("white")) {
+                img.src = "title-dark.png";
+            } else {
+                img.src = "title-white.png";
+            }
+    
+            if (body.id === "dark") {
+                body.removeAttribute("id");
+            } else {
+                body.id = "dark";
+            }
+        });
+    });
+    </script>
 </body>
 </html>
