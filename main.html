@@ -18,6 +18,15 @@
             line-height: 1.6;
             box-sizing: border-box;
         }
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #bcbcbc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #af32af;
+        }
         div, header {
             display: block;
         }
@@ -34,16 +43,40 @@
             margin-right: auto;
             margin-left: auto;
         }
+        .navbar .container{
+            display: block;
+            unicode-bidi: isolate;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .col {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
         b {
             font-weight: 600;
         }
+        @media (min-width: 1200px) {
+            .navbar .container, .container {
+                width: 1170px;
+            }
+        }   
         @media (min-width: 992px) {
-            div {
+            .navbar .container, .container {
                 width: 970px;
             }
         }
+        @media (min-width: 992px) {
+            .col {  
+                float: left;
+            }
+        }
         @media (min-width: 768px) {
-            div {
+            .container {
                 width: 750px;
             }
         }
@@ -54,13 +87,24 @@
         }
         nav {
             position: relative;
-            background-color: #E1E1E1;
+            background-color: #bcbcbc;
             border: 0;
             border-radius: 0;
             box-shadow: none;
             margin: 0;
             z-index: 9;
-            border-bottom: 3px solid #AF32AF;
+            border-bottom: 3px solid #af32af;
+        }
+        section {
+            padding-top: 20px;
+        
+        }
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        img {
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -80,7 +124,9 @@
         </nav>
     </header>
 <div>
-
+    <p align="center">
+        <a href="laws.html">Laws</a>
+    </p>
 </div>
 </body>
 </html>
