@@ -11,7 +11,6 @@
             font-size: 18px;
             font-family: "Montserrat", sans-serif;
             font-weight: 400;
-            color: #333;
             line-height: 1.6;
             box-sizing: border-box;
         }
@@ -86,7 +85,13 @@
                 float: left;
             }
         }
+        @media (min-width: 768px) {
+            .navbar-right {
+                float: right;
+            }
+        }
         nav {
+            transition: 0.25s;
             position: relative;
             background-color: #bcbcbc;
             border: 0;
@@ -112,23 +117,31 @@
             color: white;
         }
         #dark nav {
-            background-color: #101010;
+            background-color: #202020;
             color: white;
         }
-        #dark a {
+        a {
             color: #af32af;
         }
-        button {
+        .theme {
             background-color: #af32af;
             color: white;
             padding: 12px;
             border: 0;
             border-radius: 100px;
             font-weight: bold;
-            margin-top: 1.5%;
-            margin-bottom: 1.5%;
-            margin-left: 35%;
+            margin-top: 10%;
             font-size: small;
+        }
+        a p {
+            background-color: #af32af;
+            color: white;
+            padding: 12px;
+            border: 0;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: bold;
+            width: 100%;
         }
     </style>
 </head>
@@ -149,31 +162,38 @@
             </div>
         </nav>
     </header>
-<div>
-    <p align="center">
-        <a href="laws.html">Laws</a>
-    </p>
-</div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const button = document.querySelector(".theme");
-        const img = document.getElementById("image");
-        const body = document.body;
+    <main>
+        <div class="container">
+            <div class="row">
+                <a href="laws.html">
+                    <p align="center">Laws</p>
+                </a>
+                <a href="news.html">
+                    <p align="center">News</p>
+                </a>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const button = document.querySelector(".theme");
+            const img = document.getElementById("image");
+            const body = document.body;
     
-        button.addEventListener("click", function() {
-            if (img.src.includes("white")) {
-                img.src = "title-dark.png";
-            } else {
-                img.src = "title-white.png";
-            }
+            button.addEventListener("click", function() {
+                if (img.src.includes("white")) {
+                    img.src = "title-dark.png";
+                } else {
+                    img.src = "title-white.png";
+                }
     
-            if (body.id === "dark") {
-                body.removeAttribute("id");
-            } else {
-                body.id = "dark";
-            }
+                if (body.id === "dark") {
+                    body.removeAttribute("id");
+                } else {
+                    body.id = "dark";
+                }
+            });
         });
-    });
     </script>
 </body>
 </html>
