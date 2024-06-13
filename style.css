@@ -34,6 +34,7 @@ div, header {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    max-height: 75px;
 }
 .navbar .container{
     display: block;
@@ -62,25 +63,34 @@ b {
         width: 970px;
     }
 }
-@media (min-width: 992px) {
-    .col {  
-        float: left;
-    }
-}
 @media (min-width: 768px) {
     .container {
         width: 750px;
     }
 }
-@media (min-width: 768px) {
-    .navbar-header {
-        float: left;
+@media (min-width: 0px) {
+    .navbar-right {
+        left: 68%;
     }
 }
 @media (min-width: 768px) {
     .navbar-right {
-        float: right;
+        left: 76%;
     }
+}
+@media (min-width: 992px) {
+    .navbar-right {
+        left: 86%;
+    }
+}
+.navbar-header {
+    max-width: 300px;
+    position: absolute;
+}
+.navbar-right {
+    max-height: 58px;
+    max-width: 123px;
+    position: absolute;
 }
 nav {
     transition: 0.25s;
@@ -102,6 +112,7 @@ section {
     margin-left: -15px;
 }
 img {
+    margin-top: 4%;
     vertical-align: middle;
 }
 #dark {
@@ -127,15 +138,16 @@ a {
     border: 0;
     border-radius: 100px;
     font-weight: bold;
-    margin-top: 10%;
     font-size: small;
+    margin-top: 10%;
 }
 .news {
     margin-top: 10px;
     margin-bottom: 10px;
     border: 4px solid #af32af;
     padding: 10px;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
 }
 .date {
     color: #af32af;
@@ -148,6 +160,11 @@ h2 {
     font-weight: bold;
     font-size: 36px;
 }
+h3 {
+    color: #af32af;
+    font-weight: bold;
+    font-size: 28px;
+}
 .news p {
     margin: 0;
 }
@@ -159,5 +176,6 @@ a p {
     border-radius: 100px;
     text-decoration: none;
     font-weight: bold;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
 }
