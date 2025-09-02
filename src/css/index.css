@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+    --color-dark: oklch(0.14 0.0044 285.82);
+    --color-replaceable: oklch(0.73 0.1328 235.01);
+    --color-special: oklch(0.6291 0.168 24.57);
+    --color-combination: oklch(0.6677 0.1 160.24);
+    --color-cardborder: oklch(0.3089 0.0038 264.51);
+    --color-cardborderlight: oklch(0.3836 0.0033 286.24);
+    --color-cardborderslight: oklch(0.4061 0.0033 286.25);
+    --color-cardbg: oklch(0.2103 0.0059 285.89);
+    --color-cardbglight: oklch(0.2532 0.0056 285.99);
+    --color-cardbgslight: oklch(0.2821 0.0054 286.05);
+    --default-font-family: 'Source Sans 3', sans-serif;
+    --font-emoji: 'Noto Color Emoji', sans-serif;
+    --font-old: 'Source Serif 4', sans-serif;
+}
+
+.eshakap-a {
+    margin-top: 6px;
+    margin-bottom: 1px;
+    width: 5px;
+    height: 5px;
+}
+
+.eshakap-a-big {
+    margin-top: 9px;
+    margin-bottom: 2px;
+    width: 7.5px;
+    height: 7.5px;
+}
+
+.eshakap-syllable-1 {
+    position: relative;
+    top: 2px;
+    left: -2px;
+}
+
+.eshakap-syllable-1-big {
+    position: relative;
+    top: 3px;
+    left: -3px;
+}
