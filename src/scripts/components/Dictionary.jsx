@@ -20,8 +20,8 @@ export default function Dictionary() {
 
     useEffect(() => {
         const url = search.trim()
-            ? `https://eshakapapi.onrender.com/fetch?q=${encodeURIComponent(search)}&f=${filterHex}`
-            : `https://eshakapapi.onrender.com/fetch?f=${filterHex}`
+            ? `https://lutinexapi.onrender.com/fetch?q=${encodeURIComponent(search)}&f=${filterHex}`
+            : `https://lutinexapi.onrender.com/fetch?f=${filterHex}`
         
         document.title = "Äšakap · Dictionary"
         
@@ -35,7 +35,7 @@ export default function Dictionary() {
                 console.error("Failed to fetch data:", err)
                 setLoading(false)
             })
-        fetch("https://eshakapapi.onrender.com/max")
+        fetch("https://lutinexapi.onrender.com/max")
             .then(res => res.json())
             .then(obj => {
                 setMaxCount(obj.max)
@@ -43,7 +43,7 @@ export default function Dictionary() {
             .catch(err => {
                 console.error("Failed to fetch data:", err)
             })
-        fetch("https://eshakapapi.onrender.com/order")
+        fetch("https://lutinexapi.onrender.com/order")
             .then(res => res.json())
             .then(obj => {
                 setOrder(obj)

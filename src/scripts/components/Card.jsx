@@ -6,7 +6,7 @@ export default function Card({word, meaning, type}) {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`https://eshakapapi.onrender.com/convert?q=${encodeURIComponent(word)}`)
+        fetch(`https://lutinexapi.onrender.com/convert?q=${encodeURIComponent(word)}`)
             .then(res => res.json())
             .then(obj => {
                 setEshakap(obj)
@@ -43,7 +43,7 @@ export default function Card({word, meaning, type}) {
     return (
         <li>
             <div className={`shadow-sm flex-1 flex flex-wrap flex-col border-2 gap-1 bg-cardbg border-cardborder border-l-4 has-[a:hover]:border-l-8 w-auto rounded-md duration-100 ${leftColorClass}`}>
-                <Link to={`/Eshakap/language/words/${word}`} className="flex-1">
+                <Link to={`/Lutinex/language/words/${word}`} className="flex-1">
                     <div className="flex flex-col space-y-1 p-4 pl-6">
                         <div className="flex flex-row w-full mb-1">
                             { loading

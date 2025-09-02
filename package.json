@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.5.0",
   "type": "module",
+  "homepage": "https://zhyov.github.io/Lutinex/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

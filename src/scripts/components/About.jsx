@@ -2,9 +2,9 @@ import { useEffect } from "react"
 import WordLink from "./WordLink"
 import Navbar from "./Navbar"
 
-export default function Documentation() {
+export default function About() {
     useEffect(() => {
-        document.title = "Äšakap · Documentation"
+        document.title = "Äšakap · About"
     })
 
     return (

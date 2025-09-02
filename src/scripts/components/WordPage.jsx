@@ -21,12 +21,12 @@ export default function WordPage() {
 
     useEffect(() => {
         document.title = "Äšakap · " + specifiedWord
-        fetch(`https://eshakapapi.onrender.com/word?q=${specifiedWord}`)
+        fetch(`https://lutinexapi.onrender.com/word?q=${specifiedWord}`)
             .then(res => res.json())
             .then(obj => setData(obj))
             .catch(err => console.error("Failed to fetch data:", err))
 
-        fetch(`https://eshakapapi.onrender.com/convert?q=${specifiedWord}`)
+        fetch(`https://lutinexapi.onrender.com/convert?q=${specifiedWord}`)
             .then(res => res.json())
             .then(obj => setEshakap(obj))
             .catch(err => console.error("Failed to fetch data:", err))
@@ -74,7 +74,7 @@ export default function WordPage() {
     if (type === "combination") {
         combinationElement = (
             <span key={crypto.randomUUID()}>
-                <Link to={`/Eshakap/language/words/${combination[0]}`} className="text-blue-400 hover:underline">{combination[0]}</Link> and <Link to={`/Eshakap/language/words/${combination[1]}`} className="text-blue-400 hover:underline">{combination[1]}</Link>
+                <Link to={`/Lutinex/language/words/${combination[0]}`} className="text-blue-400 hover:underline">{combination[0]}</Link> and <Link to={`/Lutinex/language/words/${combination[1]}`} className="text-blue-400 hover:underline">{combination[1]}</Link>
             </span>
         )
     }
@@ -88,8 +88,8 @@ export default function WordPage() {
             <Navbar gridEnabled={false} searchEnabled={false} filterEnabled={false} />
             <div className="flex flex-col items-stretch mt-2 gap-2 mx-auto max-w-11/12 md:max-w-[min(98vw,1500px)]">
                 <div className="flex flex-row gap-2 mt-2">
-                    <Link to="/Eshakap/language/dictionary">
-                        <img src="https://zhyov.github.io/Eshakap/assets/icon/back.svg" alt="back" className="size-10 p-3 rounded-md invert transition-colors hover:bg-neutral-300" />
+                    <Link to="/Lutinex/language/dictionary">
+                        <img src="https://zhyov.github.io/Lutinex/assets/icon/back.svg" alt="back" className="size-10 p-3 rounded-md invert transition-colors hover:bg-neutral-300" />
                     </Link>
                     <span className="text-4xl">{word}</span>
                 </div>

@@ -93,7 +93,7 @@ export default function Navbar({ gridEnabled, searchEnabled, filterEnabled, sear
                 searchEnabled
                 ? <div className="flex flex-nowrap flex-row basis-6/10 gap-x-2 justify-end">
                     <div>
-                        <button onClick={() => setOpenMenu(openMenu === "filter" ? null : "filter")} className={`flex flex-nowrap flex-row p-3 rounded-md ring-1 ring-neutral-800 items-center transition-colors hover:bg-neutral-800 hover:cursor-pointer hover:*:invert ${changeFilter}`}>
+                        <button onClick={() => setOpenMenu(openMenu === "filter" ? null : "filter")} className={`flex flex-nowrap flex-row p-3 rounded-md ring-1 ring-neutral-800 items-center transition-colors hover:bg-neutral-800 hover:cursor-pointer hover:*:invert-0 ${changeFilter}`}>
                             <img src="https://zhyov.github.io/Lutinex/assets/icon/filter.svg" alt="filter" className="size-4 invert-50" />
                         </button>
                         {openMenu === "filter" && (
@@ -134,7 +134,7 @@ export default function Navbar({ gridEnabled, searchEnabled, filterEnabled, sear
                         )}
                     </div>
                     <div>
-                        <button onClick={() => setOpenMenu(openMenu === "grid" ? null : "grid")} className={`flex flex-nowrap flex-row p-3 rounded-md ring-1 ring-neutral-800 items-center transition-colors hover:bg-neutral-800 hover:cursor-pointer hover:*:invert ${changeGrid}`}>
+                        <button onClick={() => setOpenMenu(openMenu === "grid" ? null : "grid")} className={`flex flex-nowrap flex-row p-3 rounded-md ring-1 ring-neutral-800 items-center transition-colors hover:bg-neutral-800 hover:cursor-pointer hover:*:invert-0 ${changeGrid}`}>
                             <img src="https://zhyov.github.io/Lutinex/assets/icon/grid.svg" alt="grid" className="size-4 invert-50" />
                         </button>
                         {openMenu === "grid" && (

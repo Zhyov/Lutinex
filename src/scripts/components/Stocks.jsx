@@ -7,7 +7,7 @@ ChartJS.register(ArcElement, CategoryScale, LinearScale, PointElement, LineEleme
 
 function StockCardSkeleton() {
     return (
-      <div className="shadow-sm flex-1 flex flex-nowrap flex-col gap-2 border-2 w-128 border-cardborder bg-cardbg rounded-md duration-100 p-4">
+      <div className="shadow-sm flex-1 flex flex-nowrap flex-col gap-2 border-2 w-96 md:w-128 border-cardborder bg-cardbg rounded-md duration-100 p-4">
             <h1 className="text-2xl font-[600]">Ifäsota Aziwąk (ISA)</h1>
             <span className="bg-cardborder h-0.5 w-full"></span>
             <h2 className="text-2xl font-[700]">$0.00 <span className="text-xl text-neutral-500">+0.00 (+0.00%)</span></h2>
@@ -32,7 +32,7 @@ function StockCard({ name, code, price, previousPrice, percentPrice, priceData, 
     const [selectedView, setSelectedView] = useState("price")
 
     return (
-        <div className="shadow-sm flex-1 flex flex-nowrap flex-col gap-2 border-2 w-128 border-cardborder bg-cardbg rounded-md duration-100 p-4">
+        <div className="shadow-sm flex-1 flex flex-nowrap flex-col gap-2 border-2 w-96 md:w-128 border-cardborder bg-cardbg rounded-md duration-100 p-4">
             <h1 className="text-2xl font-[600]">{name} ({code})</h1>
             <span className="bg-cardborder h-0.5 w-full"></span>
             <h2 className="text-2xl font-[700]">${price} <span className={`text-xl ${price - previousPrice === 0 ? "text-neutral-500" : price - previousPrice > 0 ? "text-green-500" : "text-red-500"}`}>{price - previousPrice < 0 ? "" : "+"}{price - previousPrice} ({price - previousPrice < 0 ? "" : "+"}{percentPrice}%)</span></h2>
@@ -47,7 +47,7 @@ function StockCard({ name, code, price, previousPrice, percentPrice, priceData, 
                 </div>
                 {selectedView === "price" && (
                     <div className="w-full h-64 flex align-middle justify-center">
-                        <Line data={priceData} />
+                        <Line data={priceData} className="mt-12 md:mt-0" />
                     </div>
                 )}
                 {selectedView === "shares" && (
@@ -67,7 +67,7 @@ export default function Stocks() {
     useEffect(() => {
         document.title = "Lötinäç · Stocks"
 
-        fetch("https://eshakapapi.onrender.com/stocks")
+        fetch("https://lutinexapi.onrender.com/stocks")
             .then(res => res.json())
             .then(data => {
                 setStocks(data)
