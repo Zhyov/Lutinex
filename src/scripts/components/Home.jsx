@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import { Link } from "react-router-dom"
 import Navbar from "./Navbar"
 
 export default function Home() {
@@ -14,24 +13,6 @@ export default function Home() {
                 <h1 className="text-4xl font-[600]">Lötinäç</h1>
                 <p className="text-center w-[65%]">Lötinäç is a fictional country made for a Minecraft world. Äšakap is a conlang created by <a href="https://github.com/Zhyov" className="underline">Zhyov</a> for this nation.<br />This is an app made with the purpose of displaying information about the nation and language, primarily the latter.</p>
                 <ul className="flex flex-col gap-2 items-center w-[65%]">
-                    <Link to="/Lutinex/language/dictionary">
-                        <div className="flex flex-nowrap flex-row gap-x-2 p-2 rounded-md items-center transition-colors hover:bg-neutral-800 hover:*:invert-0">
-                            <img src="https://zhyov.github.io/Lutinex/assets/icon/dictionary.svg" alt="dictionary" className="size-4 invert-50" />
-                            <span className="text-[16px] text-white invert-50">Dictionary</span>
-                        </div>
-                    </Link>
-                    <Link to="/Lutinex/language/about">
-                        <div className="flex flex-nowrap flex-row gap-x-2 p-2 rounded-md items-center transition-colors hover:bg-neutral-800 hover:*:invert-0">
-                            <img src="https://zhyov.github.io/Lutinex/assets/icon/about.svg" alt="about" className="size-4 invert-50" />
-                            <span className="text-[16px] text-white invert-50">About</span>
-                        </div>
-                    </Link>
-                    <Link to="/Lutinex/country/stocks">
-                        <div className="flex flex-nowrap flex-row gap-x-2 p-2 rounded-md items-center transition-colors hover:bg-neutral-800 hover:*:invert-0">
-                            <img src="https://zhyov.github.io/Lutinex/assets/icon/stocks.svg" alt="stocks" className="size-4 invert-50" />
-                            <span className="text-[16px] text-white invert-50">Stocks</span>
-                        </div>
-                    </Link>
                     <a href="https://github.com/Zhyov/Lutinex" className="flex flex-nowrap flex-row gap-x-2 p-2 rounded-md items-center transition-colors hover:bg-neutral-800 hover:*:invert">
                         <img src="https://zhyov.github.io/Lutinex/assets/icon/github.svg" alt="github" className="size-4 invert-50" />
                         <span className="text-[16px] text-neutral-950 invert-50">Website's GitHub</span>

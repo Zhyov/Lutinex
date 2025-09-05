@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import Navbar from "./Navbar"
-import Card from "./Card"
-import CardSkeleton from "./CardSkeleton"
+import WordCard from "./WordCard"
+import WordCardSkeleton from "./WordCardSkeleton"
 
 export default function Dictionary() {
     const location = useLocation()
@@ -62,10 +62,10 @@ export default function Dictionary() {
         }
 
         return (aIndex === -1 ? Infinity : aIndex) - (bIndex === -1 ? Infinity : bIndex)
-    };
+    }
 
     const words = data.sort(compare).map(element => {
-        return <Card key={element.id} word={element.word} meaning={element.meaning} type={element.type} />
+        return <WordCard key={element.id} word={element.word} meaning={element.meaning} type={element.type} />
     })
 
     const gridColsClass = {
@@ -79,7 +79,7 @@ export default function Dictionary() {
             <Navbar gridEnabled={true} searchEnabled={true} filterEnabled={true} search={search} setSearch={setSearch} gridCols={gridCols} setGridCols={setGridCols} setFilterParam={setFilterHex} />
             <div className="text-xl my-2 text-center">Amijąçj: {data.length}/{maxCount}</div>
             <ul className={`grid ${gridColsClass} items-stretch mt-2 gap-2 mx-auto max-w-11/12 md:max-w-[min(90vw,1200px)]`}>
-                {loading ? Array(6).fill(0).map((_, i) => <CardSkeleton key={i} />) : words}
+                {loading ? Array(6).fill(0).map((_, i) => <WordCardSkeleton key={i} />) : words}
             </ul>
         </>
     )

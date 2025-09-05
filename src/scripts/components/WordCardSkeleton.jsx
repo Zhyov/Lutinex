@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function CardSkeleton() {
+export default function WordCardSkeleton() {
     return (
         <div className={`flex shadow-sm flex-1 flex-wrap flex-col border-2 gap-2 bg-cardbg border-cardborder border-l-4 w-auto rounded-md duration-100`}>
                 <Link className="flex-1">

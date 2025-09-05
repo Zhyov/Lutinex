@@ -9,6 +9,15 @@
     <link rel="icon" href="./assets/logo.ico">
     <title>Lötinäç</title>
     <link rel="stylesheet" href="/src/css/index.css">
+    <script>
+        (function () {
+            var redirect = sessionStorage.getItem("gh-spa-redirect");
+            if (redirect) {
+                sessionStorage.removeItem("gh-spa-redirect");
+                history.replaceState(null, "", redirect);
+            }
+        })();
+    </script>
 </head>
 <body class="bg-dark text-white">
     <div id="root"></div>

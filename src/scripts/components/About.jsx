@@ -8,7 +8,7 @@ export default function About() {
     })
 
     return (
-        <div className="relative mx-auto p-0 flex flex-col min-h-dvh">
+        <>
             <Navbar gridEnabled={false} searchEnabled={false} filterEnabled={false} />
             <div className="flex flex-col items-stretch mt-2 mb-2 gap-2 mx-auto min-w-6/12 md:max-w-[min(68vw,1500px)]">
                 <div className="shadow-sm flex-1 flex flex-wrap flex-col border-0 md:border-2 gap-4 md:border-cardborder bg-dark md:bg-cardbg rounded-md duration-100 p-4">
@@ -32,7 +32,7 @@ export default function About() {
                     </span>
                     <h1 className="text-2xl font-[600]">Morphology and Word Types</h1>
                     <span>
-                        Äšakap combines nonconcatenative morphology with concatenative elements. Words are built from roots called replaceable words and modified by patterns called modifiers. All sentences follow a subject-verb-object order, and prepositions precede objects.
+                        Äšakap combines nonconcatenative morphology with concatenative elements. Words are built from roots called replaceable words and modified by patterns called modifiers.
                     </span>
                     <span className="text-xl font-[600]">
                         Word types:
@@ -109,6 +109,7 @@ export default function About() {
                         <ul className="list-disc list-inside font-normal text-[16px]">
                             <li>Antonymization: <span className="bg-cardborder px-1 rounded-md">al</span> (produces the opposite meaning)</li>
                             <li>Proper noun indicator: <span className="bg-cardborder px-1 rounded-md">ök</span> (optional usage)</li>
+                            <li>Agentive derivation: <span className="bg-cardborder px-1 rounded-md">ąš</span></li>
                         </ul>
                     </span>
                     <span>
@@ -116,10 +117,10 @@ export default function About() {
                     </span>
                     <h1 className="text-2xl font-[600]">Sentence Structure</h1>
                     <ul className="list-disc list-inside">
-                        <li>Sentences follow subject-verb-object order.</li>
+                        <li>Sentences mainly follow subject-verb-object order but can change to place emphasis on other words.</li>
                         <li>Prepositions precede the object: Subject Verb Preposition Object.</li>
-                        <li>Adjectives follow the noun they modify and take its case and number.</li>
-                        <li>Adverbs follow the verb they modify.</li>
+                        <li>Adjectives can go before or after the noun they modify and take its case and number.</li>
+                        <li>Adverbs can go before or after the verb they modify.</li>
                     </ul>
                     <h1 className="text-2xl font-[600]">Word Formation</h1>
                     <ul className="list-disc list-inside">
@@ -144,6 +145,6 @@ export default function About() {
                     </span>
                 </div>
             </div>
-        </div>
+        </>
     )
 }

@@ -4,7 +4,7 @@ import Navbar from "./Navbar"
 import WordPageSkeleton from "./WordPageSkeleton"
 
 export default function WordPage() {
-    const { word: specifiedWord } = useParams();
+    const { word: specifiedWord } = useParams()
     const [data, setData] = useState([])
     const [eshakap, setEshakap] = useState([])
 
@@ -94,15 +94,17 @@ export default function WordPage() {
                     <span className="text-4xl">{word}</span>
                 </div>
                 <div className="shadow-sm flex-1 flex flex-wrap flex-col border-2 gap-1 border-cardborder bg-cardbg w-auto rounded-md duration-100">
-                    <div className="flex flex-col space-y-1 p-4 pl-6">
-                        <div className="flex flex-row w-full mb-1">
+                    <div className="flex flex-col space-y-1">
+                        <div className="flex flex-row w-full mb-1 pt-4 px-4">
                             <div className="flex flex-row min-w-max">{eshakapElements}</div>
                         </div>
-                        <span className="w-full text-[14px] text-neutral-400">/{phonetic}/</span>
-                        <span className="w-full text-2xl mt-4">Broad Definition</span>
-                        <span className="w-full text-[16px]">{meanings}</span>
-                        <span className="w-full text-xl mt-4">Word type: {type}</span>
-                        { type === "combination" && <span className="w-full text-xl mt-4">Combination of {combinationElement}</span> }
+                        <span className="w-full text-[14px] text-neutral-400 px-4">/{phonetic}/</span>
+                        <span className="bg-cardborder h-0.5 w-full my-4"></span>
+                        <span className="w-full text-2xl px-4">Broad Definition</span>
+                        <span className="w-full text-[16px] px-4">{meanings}</span>
+                        <span className="bg-cardborder h-0.5 w-full my-4"></span>
+                        <span className="w-full text-xl px-4">Word type: {type}</span>
+                        { type === "combination" && <span className="w-full text-xl p-4">Combination of {combinationElement}</span> }
                     </div>
                 </div>
             </div>
