@@ -94,7 +94,7 @@ export default function WordPage() {
                     <span className="text-4xl">{word}</span>
                 </div>
                 <div className="shadow-sm flex-1 flex flex-wrap flex-col border-2 gap-1 border-cardborder bg-cardbg w-auto rounded-md duration-100">
-                    <div className="flex flex-col space-y-1">
+                    <div className="flex flex-col space-y-1 pb-4">
                         <div className="flex flex-row w-full mb-1 pt-4 px-4">
                             <div className="flex flex-row min-w-max">{eshakapElements}</div>
                         </div>
@@ -104,7 +104,7 @@ export default function WordPage() {
                         <span className="w-full text-[16px] px-4">{meanings}</span>
                         <span className="bg-cardborder h-0.5 w-full my-4"></span>
                         <span className="w-full text-xl px-4">Word type: {type}</span>
-                        { type === "combination" && <span className="w-full text-xl p-4">Combination of {combinationElement}</span> }
+                        { type === "combination" && <span className="w-full text-xl pt-4 px-4">Combination of {combinationElement}</span> }
                     </div>
                 </div>
             </div>
