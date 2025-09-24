@@ -98,7 +98,7 @@ export default function WordPage() {
                         <div className="flex flex-row w-full mb-1 pt-4 px-4">
                             <div className="flex flex-row min-w-max">{eshakapElements}</div>
                         </div>
-                        <span className="w-full text-[14px] text-neutral-400 px-4">/{phonetic}/</span>
+                        <span className="w-full text-[14px] text-neutral-400 px-4">[{phonetic}]</span>
                         <span className="bg-cardborder h-0.5 w-full my-4"></span>
                         <span className="w-full text-2xl px-4">Broad Definition</span>
                         <span className="w-full text-[16px] px-4">{meanings}</span>

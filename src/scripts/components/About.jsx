@@ -20,7 +20,7 @@ export default function About() {
                         Alphabet:
                         <br/>
                         <span className="font-normal">
-                            A, Ä, Ą, P, B, F, V, W, K, G, T, D, Đ, Z, Ž, I, Į, H, J, L, M, N, Ň, O, Ö, R, S, Š, C, Č, Ç
+                            Aa, Ää, Ąą, Pp, Bb, Ff, Vv, Ww, Kk, Gg, Tt, Dd, Đđ, Zz, Žž, Ii, Įį, Hh, Jj, Ll, Mm, Nn, Ňň, Oo, Öö, Rr, Ss, Šš, Cc, Čč, Çç
                         </span>
                     </span>
                     <span className="font-[600]">
@@ -40,8 +40,8 @@ export default function About() {
                         <ul className="list-disc list-inside font-normal text-[16px]">
                             <li><span className="font-[600]">General words</span>: Fixed meaning, stressed on the first syllable, used for pronouns, conjunctions, and basic particles.</li>
                             <li><span className="font-[600]">Special words</span>: Fixed meaning for concrete nouns such as animals or proper concepts. Stressed on the first syllable.</li>
-                            <li><span className="font-[600]">Replaceable words</span>: Tri-consonantal roots with polysemic meanings. Require modifiers to express specific meanings. Stress placement follows rules based on the final consonant or vowel of the stem.</li>
-                            <li><span className="font-[600]">Combination words</span>: Formed by combining two or three replaceable words to create new, compositional meanings. Each combination requires a new modifier for usage.</li>
+                            <li><span className="font-[600]">Replaceable words</span>: Tri-consonantal roots with polysemic meanings. Obligatory to use modifiers to express specific meanings. Stress placement follows rules based on the final consonant or vowel of the stem.</li>
+                            <li><span className="font-[600]">Combination words</span>: Formed by combining two or three replaceable words to create new, compositional meanings. Commonly appear with a modifier already in place, but not obligatory to use.</li>
                         </ul>
                     </span>
                     <h1 className="text-2xl font-[600]">Stress Rules</h1>
@@ -86,20 +86,28 @@ export default function About() {
                         Suffixes:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <span className="font-[600] ml-5.5">By case</span>
+                            <span className="font-[600] ml-5.5">By case (noun, adjective, or particle)</span>
                             <li>Accusative: <span className="bg-cardborder px-1 rounded-md">ma</span></li>
                             <li>Dative: <span className="bg-cardborder px-1 rounded-md">ja</span></li>
-                            <li>Genitive: <span className="bg-cardborder px-1 rounded-md">sö</span></li>
-                            <span className="font-[600] ml-5.5">By modifier</span>
+                            <li>Possessor Genitive: <span className="bg-cardborder px-1 rounded-md">sö</span></li>
+                            <li>Possessed Genitive: <span className="bg-cardborder px-1 rounded-md">lö</span></li>
+                            <span className="font-[600] ml-5.5">By mood (verb)</span>
+                            <li>Imperative: <span className="bg-cardborder px-1 rounded-md">hö</span></li>
+                            <li>Conditional: <span className="bg-cardborder px-1 rounded-md">sä</span></li>
+                            <li>Narrow Optative: <span className="bg-cardborder px-1 rounded-md">fä</span></li>
+                            <li>Broad Optative: <span className="bg-cardborder px-1 rounded-md">vä</span></li>
+                            <li>Jussive: <span className="bg-cardborder px-1 rounded-md">ra</span></li>
+                            <li>Potential: <span className="bg-cardborder px-1 rounded-md">ga</span></li>
+                            <span className="font-[600] ml-5.5">By modifier (any but particle)</span>
                             <li>Adjectivization: <span className="bg-cardborder px-1 rounded-md">ha</span></li>
                             <li>Demonymization: <span className="bg-cardborder px-1 rounded-md">rä</span></li>
-                            <span className="font-[600] ml-5.5">By size</span>
+                            <span className="font-[600] ml-5.5">By size (any but particle)</span>
                             <li>Diminutive: <span className="bg-cardborder px-1 rounded-md">dä</span></li>
                             <li>Augmentative: <span className="bg-cardborder px-1 rounded-md">gä</span></li>
-                            <span className="font-[600] ml-5.5">By article</span>
+                            <span className="font-[600] ml-5.5">By article (noun)</span>
                             <li>Definite: <span className="bg-cardborder px-1 rounded-md">ta</span></li>
                             <li>Indefinite: <span className="bg-cardborder px-1 rounded-md">ka</span></li>
-                            <span className="font-[600] ml-5.5">By number</span>
+                            <span className="font-[600] ml-5.5">By number (noun or adjective)</span>
                             <li>Plural: <span className="bg-cardborder px-1 rounded-md">j</span> (exempt from apostrophe rule)</li>
                         </ul>
                     </span>
