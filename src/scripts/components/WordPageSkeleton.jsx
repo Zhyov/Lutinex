@@ -11,7 +11,7 @@ export default function WordPageSkeleton() {
             <Navbar />
             <div className="flex flex-col items-stretch mt-2 gap-2 mx-auto max-w-11/12 md:max-w-[min(98vw,1500px)]">
                 <div className="flex flex-row gap-2 mt-2">
-                    <Link to="/Eshakap/dictionary">
+                    <Link to="/Lutinex/dictionary">
                         <img src="https://zhyov.github.io/Lutinex/assets/icon/back.svg" alt="back" className="size-10 p-3 rounded-md invert transition-colors hover:bg-neutral-300" />
                     </Link>
                     <span className="text-4xl rounded-full bg-neutral-700 animate-pulse w-28 h-10"></span>
