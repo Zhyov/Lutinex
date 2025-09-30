@@ -10,8 +10,8 @@ export default function About() {
     return (
         <>
             <Navbar gridEnabled={false} searchEnabled={false} filterEnabled={false} />
-            <div className="flex flex-col items-stretch mt-2 mb-2 gap-2 mx-auto min-w-6/12 md:max-w-[min(68vw,1500px)]">
-                <div className="shadow-sm flex-1 flex flex-wrap flex-col border-0 md:border-2 gap-4 md:border-cardborder bg-dark md:bg-cardbg rounded-md duration-100 p-4">
+            <div className="flex flex-col items-stretch mt-2 mb-2 gap-2 mx-auto w-full max-w-[min(95vw,1500px)] md:max-w-[min(68vw,1500px)]">
+                <div className="shadow-sm flex-1 flex flex-wrap border-0 md:border-2 gap-4 md:border-cardborder bg-dark md:bg-cardbg rounded-md duration-100 p-4 *:w-full">
                     <h1 className="text-2xl font-[600]">Alphabet and Phonetics</h1>
                     <span>
                         Äšakap uses a phonetic alphabet with direct correspondence between letters and sounds. Each letter always corresponds to its phoneme, there are no allophones or silent letters.
@@ -23,10 +23,11 @@ export default function About() {
                             Aa, Ää, Ąą, Pp, Bb, Ff, Vv, Ww, Kk, Gg, Tt, Dd, Đđ, Zz, Žž, Ii, Įį, Hh, Jj, Ll, Mm, Nn, Ňň, Oo, Öö, Rr, Ss, Šš, Cc, Čč, Çç
                         </span>
                     </span>
-                    <span className="text-xl font-[600]">
+                    <div className="text-xl font-[600]">
                         Grapheme to phoneme correspondence
                         <br/>
-                        <table className="border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <div className="overflow-x-auto">
+                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
                                 <th>Grapheme</th>
                                 <th>Phoneme</th>
@@ -63,7 +64,8 @@ export default function About() {
                             <tr><td>č</td><td>[tʂ]</td></tr>
                             <tr><td>ç</td><td>[ks]</td></tr>
                         </table>
-                    </span>
+                        </div>
+                    </div>
                     <span className="text-xl font-[600]">
                         Phonotactics:
                         <br/>
@@ -106,10 +108,11 @@ export default function About() {
                             <li>The hyphen is only orthographic, not phonological. Functions as just one prosodic word, they decline like single words.</li>
                         </ul>
                     </span>
-                    <span className="text-xl font-[600]">
+                    <div className="text-xl font-[600]">
                         Pronouns
                         <br/>
-                        <table className="border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <div className="overflow-x-auto">
+                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
                                 <td colSpan={2}></td>
                                 <th>Singular</th>
@@ -142,15 +145,17 @@ export default function About() {
                                 <td>onoj</td>
                             </tr>
                         </table>
-                    </span>
-                    <span className="text-xl font-[600]">
+                        </div>
+                    </div>
+                    <div className="text-xl font-[600]">
                         Agreement rules:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
                             <li>Adjectives agree with their nouns in case and number. (See example below for <span className="bg-cardborder px-1 rounded-md">afisąn</span> "person" + <span className="bg-cardborder px-1 rounded-md">igädosa</span> "good")</li>
                             <li>Adjective agreement is the only one present.</li>
                         </ul>
-                        <table className="border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <div className="overflow-x-auto">
+                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
                                 <td colSpan={2}></td>
                                 <th>Singular</th>
@@ -183,14 +188,16 @@ export default function About() {
                                 <td>afisąn'löj igädosa'löj</td>
                             </tr>
                         </table>
-                    </span>
+                        </div>
+                    </div>
                     <span>
                         For verbs, Äšakap marks tense and aspect with modifiers, while mood is expressed through suffixes. Together these produce a full Tense-Aspect-Mood system. (See examples below for the verb <span className="bg-cardborder px-1 rounded-md">cžš</span> "to write")
                     </span>
-                    <span className="text-xl font-[600]">
+                    <div className="text-xl font-[600]">
                         Present tense
                         <br/>
-                        <table className="border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <div className="overflow-x-auto">
+                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
                                 <th>Aspect</th>
                                 <th>Imperative</th>
@@ -219,7 +226,8 @@ export default function About() {
                                 <td>ocižašä'ga</td>
                             </tr>
                         </table>
-                    </span>
+                        </div>
+                    </div>
                     <span className="text-[18px] font-[600]">
                         Examples:
                         <br/>
@@ -228,10 +236,11 @@ export default function About() {
                             <li><span className="bg-cardborder px-1 rounded-md">(Ti) acąžaš'hö!</span> "Write!"</li>
                         </ul>
                     </span>
-                    <span className="text-xl font-[600]">
+                    <div className="text-xl font-[600]">
                         Past tense
                         <br/>
-                        <table className="border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <div className="overflow-x-auto">
+                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
                                 <th>Aspect</th>
                                 <th>Imperative</th>
@@ -260,7 +269,8 @@ export default function About() {
                                 <td>ocažöš'ga</td>
                             </tr>
                         </table>
-                    </span>
+                        </div>
+                    </div>
                     <span className="text-[18px] font-[600]">
                         Examples:
                         <br/>
@@ -269,10 +279,11 @@ export default function About() {
                             <li><span className="bg-cardborder px-1 rounded-md">Ja ocažöš'sä na ti'ma.</span> "I would have written about you."</li>
                         </ul>
                     </span>
-                    <span className="text-xl font-[600]">
+                    <div className="text-xl font-[600]">
                         Future tense
                         <br/>
-                        <table className="border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <div className="overflow-x-auto">
+                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
                                 <th>Aspect</th>
                                 <th>Imperative</th>
@@ -301,7 +312,8 @@ export default function About() {
                                 <td>cįžoš'ga</td>
                             </tr>
                         </table>
-                    </span>
+                        </div>
+                    </div>
                     <span className="text-[18px] font-[600]">
                         Examples:
                         <br/>
