@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import WordLink from "./WordLink"
+import WordBox from "./WordBox"
 import Navbar from "./Navbar"
 
 export default function About() {
@@ -20,7 +20,7 @@ export default function About() {
                         Alphabet:
                         <br/>
                         <span className="font-normal text-[16px]">
-                            Aa, Ää, Ąą, Pp, Bb, Ff, Vv, Ww, Kk, Gg, Tt, Dd, Đđ, Zz, Žž, Ii, Įį, Hh, Jj, Ll, Mm, Nn, Ňň, Oo, Öö, Rr, Ss, Šš, Cc, Čč, Çç
+                            Aa, Ää, Ąą, Pp, Bb, Ƀƀ, Ff, Vv, Ww, Kk, Gg, Tt, Dd, Đđ, Zz, Žž, Ii, Įį, Hh, Jj, Ɉɉ, Ll, Łł, Mm, Nn, Ňň, Oo, Öö, Rr, Ss, Šš, Cc, Čč, Çç
                         </span>
                     </span>
                     <div className="text-xl font-[600]">
@@ -37,6 +37,7 @@ export default function About() {
                             <tr><td>ą</td><td>[ø]</td></tr>
                             <tr><td>p</td><td>[p]</td></tr>
                             <tr><td>b</td><td>[b]</td></tr>
+                            <tr><td>ƀ</td><td>[ps]</td></tr>
                             <tr><td>f</td><td>[f]</td></tr>
                             <tr><td>v</td><td>[v]</td></tr>
                             <tr><td>w</td><td>[w]</td></tr>
@@ -44,14 +45,16 @@ export default function About() {
                             <tr><td>g</td><td>[g]</td></tr>
                             <tr><td>t</td><td>[t]</td></tr>
                             <tr><td>d</td><td>[d]</td></tr>
-                            <tr><td>đ</td><td>[dʐ]</td></tr>
+                            <tr><td>đ</td><td>[d͡ʐ]</td></tr>
                             <tr><td>z</td><td>[z]</td></tr>
                             <tr><td>ž</td><td>[ʐ]</td></tr>
                             <tr><td>i</td><td>[i]</td></tr>
                             <tr><td>į</td><td>[y]</td></tr>
                             <tr><td>h</td><td>[x]</td></tr>
                             <tr><td>j</td><td>[j]</td></tr>
+                            <tr><td>ɉ</td><td>[ɮ]</td></tr>
                             <tr><td>l</td><td>[l]</td></tr>
+                            <tr><td>ł</td><td>[ɬ]</td></tr>
                             <tr><td>m</td><td>[m]</td></tr>
                             <tr><td>n</td><td>[n]</td></tr>
                             <tr><td>ň</td><td>[ɲ]</td></tr>
@@ -61,7 +64,7 @@ export default function About() {
                             <tr><td>s</td><td>[s]</td></tr>
                             <tr><td>š</td><td>[ʂ]</td></tr>
                             <tr><td>c</td><td>[ts]</td></tr>
-                            <tr><td>č</td><td>[tʂ]</td></tr>
+                            <tr><td>č</td><td>[t͡ʂ]</td></tr>
                             <tr><td>ç</td><td>[ks]</td></tr>
                         </table>
                         </div>
@@ -81,7 +84,7 @@ export default function About() {
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
                             <li>Doubling a consonant can indicate the presence of a suffix or modifier boundary.</li>
-                            <li>Example: <span className="bg-cardborder px-1 rounded-md">zašaf'fä</span> [ˈzaʂafːe] differs from <span className="bg-cardborder px-1 rounded-md">zašafä</span> [ˈzaʂafe]. The geminate /fː/ signals the start of the suffix "fä" merging with the "f" at the end of "zašaf." Mispronouncing it can lead to misinterpretation.</li>
+                            <li>Example: <WordBox word={"zašaf'fä"} /> [ˈzaʂafːe] differs from <WordBox word={"zašafä"} /> [ˈzaʂafe]. The geminate /fː/ signals the start of the suffix "fä" merging with the "f" at the end of "zašaf." Mispronouncing it can lead to misinterpretation.</li>
                             <li>Gemination is mandatory for meaning distinctions, mainly seen where an apostrophe is present.</li>
                         </ul>
                     </span>
@@ -103,8 +106,8 @@ export default function About() {
                         Derivatives:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li>To create a new lexical unit from two independent stems, a hyphen links both words. The most common usage is with the word <span className="bg-cardborder px-1 rounded-md"><WordLink word={"čom"} wordLink={"čom"} /></span></li>
-                            <li>Example: <span className="bg-cardborder px-1 rounded-md">tįk-čom</span> "everything" (every-thing)</li>
+                            <li>To create a new lexical unit from two independent stems, a hyphen links both words. The most common usage is with the word <WordBox word={"čom"} link={true} wordLink={"čom"} /></li>
+                            <li>Example: <WordBox word={"tįk-čom"} /> "everything" (every-thing)</li>
                             <li>The hyphen is only orthographic, not phonological. Functions as just one prosodic word, they decline like single words.</li>
                         </ul>
                     </span>
@@ -114,22 +117,22 @@ export default function About() {
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
-                                <td colSpan={2}></td>
+                                <th colSpan={2}>Pronoun</th>
                                 <th>Singular</th>
                                 <th>Plural</th>
                             </tr>
                             <tr>
-                                <th colSpan={2}>1st Person</th>
+                                <th colSpan={2}>1st</th>
                                 <td>ja</td>
                                 <td>jaj</td>
                             </tr>
                             <tr>
-                                <th colSpan={2}>2nd Person</th>
+                                <th colSpan={2}>2nd</th>
                                 <td>ti</td>
                                 <td>tij</td>
                             </tr>
                             <tr>
-                                <th rowSpan={3}>3rd Person</th>
+                                <th rowSpan={3}>3rd</th>
                                 <th>Masculine</th>
                                 <td>on</td>
                                 <td>onj</td>
@@ -140,7 +143,7 @@ export default function About() {
                                 <td>onaj</td>
                             </tr>
                             <tr>
-                                <th>Neutral</th>
+                                <th>Neuter</th>
                                 <td>ono</td>
                                 <td>onoj</td>
                             </tr>
@@ -151,13 +154,13 @@ export default function About() {
                         Agreement rules:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li>Adjectives agree with their nouns in case and number. (See example below for <span className="bg-cardborder px-1 rounded-md">afisąn</span> "person" + <span className="bg-cardborder px-1 rounded-md">igädosa</span> "good")</li>
+                            <li>Adjectives agree with their nouns in case and number. (See example below for <WordBox word={"afisąn"} /> "person" + <WordBox word={"igädosa"} /> "good")</li>
                             <li>Adjective agreement is the only one present.</li>
                         </ul>
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
-                                <td colSpan={2}></td>
+                                <th colSpan={2}>Case</th>
                                 <th>Singular</th>
                                 <th>Plural</th>
                             </tr>
@@ -187,11 +190,26 @@ export default function About() {
                                 <td>afisąn'lö igädosa'lö</td>
                                 <td>afisąn'löj igädosa'löj</td>
                             </tr>
+                            <tr>
+                                <th colSpan={2}>Instrumental</th>
+                                <td>afisąn'ła igädosa'ła</td>
+                                <td>afisąn'łaj igädosa'łaj</td>
+                            </tr>
+                            <tr>
+                                <th colSpan={2}>Locative</th>
+                                <td>afisąn'ca igädosa'ca</td>
+                                <td>afisąn'caj igädosa'caj</td>
+                            </tr>
+                            <tr>
+                                <th colSpan={2}>Vocative</th>
+                                <td>afisąn'hä igädosa'hä</td>
+                                <td>afisąn'häj igädosa'häj</td>
+                            </tr>
                         </table>
                         </div>
                     </div>
                     <span>
-                        For verbs, Äšakap marks tense and aspect with modifiers, while mood is expressed through suffixes. Together these produce a full Tense-Aspect-Mood system. (See examples below for the verb <span className="bg-cardborder px-1 rounded-md">cžš</span> "to write")
+                        For verbs, Äšakap marks tense and aspect with modifiers, while mood is expressed through suffixes. Together these produce a full Tense-Aspect-Mood system. (See examples below for the verb <WordBox word={"cžš"} /> "to write")
                     </span>
                     <div className="text-xl font-[600]">
                         Present tense
@@ -199,31 +217,34 @@ export default function About() {
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
-                                <th>Aspect</th>
-                                <th>Imperative</th>
-                                <th>Conditional</th>
-                                <th>Narrow Optative</th>
-                                <th>Broad Optative</th>
-                                <th>Jussive</th>
-                                <th>Potential</th>
+                                <th rowSpan={2} colSpan={2}>Aspect</th>
+                                <th rowSpan={2} colSpan={2}>Imperative</th>
+                                <th rowSpan={2} colSpan={2}>Conditional</th>
+                                <th colSpan={2}>Optative</th>
+                                <th rowSpan={2} colSpan={2}>Jussive</th>
+                                <th rowSpan={2} colSpan={2}>Potential</th>
                             </tr>
                             <tr>
-                                <th>Imperfective</th>
-                                <td>acąžaš'hö</td>
-                                <td>acąžaš'sä</td>
+                                <th>Narrow</th>
+                                <th>Broad</th>
+                            </tr>
+                            <tr>
+                                <th colSpan={2}>Imperfective</th>
+                                <td colSpan={2}>acąžaš'hö</td>
+                                <td colSpan={2}>acąžaš'sä</td>
                                 <td>acąžaš'fä</td>
                                 <td>acąžaš'vä</td>
-                                <td>acąžaš'ra</td>
-                                <td>acąžaš'ga</td>
+                                <td colSpan={2}>acąžaš'ra</td>
+                                <td colSpan={2}>acąžaš'ga</td>
                             </tr>
                             <tr>
-                                <th>Perfective</th>
-                                <td>ocižašä'hö</td>
-                                <td>ocižašä'sä</td>
+                                <th colSpan={2}>Perfective</th>
+                                <td colSpan={2}>ocižašä'hö</td>
+                                <td colSpan={2}>ocižašä'sä</td>
                                 <td>ocižašä'fä</td>
                                 <td>ocižašä'vä</td>
-                                <td>ocižašä'ra</td>
-                                <td>ocižašä'ga</td>
+                                <td colSpan={2}>ocižašä'ra</td>
+                                <td colSpan={2}>ocižašä'ga</td>
                             </tr>
                         </table>
                         </div>
@@ -232,8 +253,8 @@ export default function About() {
                         Examples:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li><span className="bg-cardborder px-1 rounded-md">Ja acąžaš'ga fa açihąk'jata.</span> "I can write in the house."</li>
-                            <li><span className="bg-cardborder px-1 rounded-md">(Ti) acąžaš'hö!</span> "Write!"</li>
+                            <li><WordBox word={"Ja acąžaš'ga (fa) açihąk'cäta."} /> "I can write in the house."</li>
+                            <li><WordBox word={"(Ti) acąžaš'hö!"} /> "Write!"</li>
                         </ul>
                     </span>
                     <div className="text-xl font-[600]">
@@ -242,31 +263,34 @@ export default function About() {
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
-                                <th>Aspect</th>
-                                <th>Imperative</th>
-                                <th>Conditional</th>
-                                <th>Narrow Optative</th>
-                                <th>Broad Optative</th>
-                                <th>Jussive</th>
-                                <th>Potential</th>
+                                <th rowSpan={2} colSpan={2}>Aspect</th>
+                                <th rowSpan={2} colSpan={2}>Imperative</th>
+                                <th rowSpan={2} colSpan={2}>Conditional</th>
+                                <th colSpan={2}>Optative</th>
+                                <th rowSpan={2} colSpan={2}>Jussive</th>
+                                <th rowSpan={2} colSpan={2}>Potential</th>
                             </tr>
                             <tr>
-                                <th>Imperfective</th>
-                                <td>äcäžišo'hö</td>
-                                <td>äcäžišo'sä</td>
+                                <th>Narrow</th>
+                                <th>Broad</th>
+                            </tr>
+                            <tr>
+                                <th colSpan={2}>Imperfective</th>
+                                <td colSpan={2}>äcäžišo'hö</td>
+                                <td colSpan={2}>äcäžišo'sä</td>
                                 <td>äcäžišo'fä</td>
                                 <td>äcäžišo'vä</td>
-                                <td>äcäžišo'ra</td>
-                                <td>äcäžišo'ga</td>
+                                <td colSpan={2}>äcäžišo'ra</td>
+                                <td colSpan={2}>äcäžišo'ga</td>
                             </tr>
                             <tr>
-                                <th>Perfective</th>
-                                <td>ocažöš'hö</td>
-                                <td>ocažöš'sä</td>
+                                <th colSpan={2}>Perfective</th>
+                                <td colSpan={2}>ocažöš'hö</td>
+                                <td colSpan={2}>ocažöš'sä</td>
                                 <td>ocažöš'fä</td>
                                 <td>ocažöš'vä</td>
-                                <td>ocažöš'ra</td>
-                                <td>ocažöš'ga</td>
+                                <td colSpan={2}>ocažöš'ra</td>
+                                <td colSpan={2}>ocažöš'ga</td>
                             </tr>
                         </table>
                         </div>
@@ -275,8 +299,8 @@ export default function About() {
                         Examples:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li><span className="bg-cardborder px-1 rounded-md">On äcäžišo'ga äta'ma.</span> "He was able to write this."</li>
-                            <li><span className="bg-cardborder px-1 rounded-md">Ja ocažöš'sä na ti'ma.</span> "I would have written about you."</li>
+                            <li><WordBox word={"On äcäžišo'ga äta'ma."} /> "He was able to write this."</li>
+                            <li><WordBox word={"Ja ocažöš'sä na ti'ma."} /> "I would have written about you."</li>
                         </ul>
                     </span>
                     <div className="text-xl font-[600]">
@@ -285,31 +309,34 @@ export default function About() {
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
                             <tr>
-                                <th>Aspect</th>
-                                <th>Imperative</th>
-                                <th>Conditional</th>
-                                <th>Narrow Optative</th>
-                                <th>Broad Optative</th>
-                                <th>Jussive</th>
-                                <th>Potential</th>
+                                <th rowSpan={2} colSpan={2}>Aspect</th>
+                                <th rowSpan={2} colSpan={2}>Imperative</th>
+                                <th rowSpan={2} colSpan={2}>Conditional</th>
+                                <th colSpan={2}>Optative</th>
+                                <th rowSpan={2} colSpan={2}>Jussive</th>
+                                <th rowSpan={2} colSpan={2}>Potential</th>
                             </tr>
                             <tr>
-                                <th>Imperfective</th>
-                                <td>icąžäši'hö</td>
-                                <td>icąžäši'sä</td>
+                                <th>Narrow</th>
+                                <th>Broad</th>
+                            </tr>
+                            <tr>
+                                <th colSpan={2}>Imperfective</th>
+                                <td colSpan={2}>icąžäši'hö</td>
+                                <td colSpan={2}>icąžäši'sä</td>
                                 <td>icąžäši'fä</td>
                                 <td>icąžäši'vä</td>
-                                <td>icąžäši'ra</td>
-                                <td>icąžäši'ga</td>
+                                <td colSpan={2}>icąžäši'ra</td>
+                                <td colSpan={2}>icąžäši'ga</td>
                             </tr>
                             <tr>
-                                <th>Perfective</th>
-                                <td>cįžoš'hö</td>
-                                <td>cįžoš'sä</td>
+                                <th colSpan={2}>Perfective</th>
+                                <td colSpan={2}>cįžoš'hö</td>
+                                <td colSpan={2}>cįžoš'sä</td>
                                 <td>cįžoš'fä</td>
                                 <td>cįžoš'vä</td>
-                                <td>cįžoš'ra</td>
-                                <td>cįžoš'ga</td>
+                                <td colSpan={2}>cįžoš'ra</td>
+                                <td colSpan={2}>cįžoš'ga</td>
                             </tr>
                         </table>
                         </div>
@@ -318,8 +345,8 @@ export default function About() {
                         Examples:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li><span className="bg-cardborder px-1 rounded-md">Onoj icąžäši'fä fa acäžiši'jaka</span> "They should be writing (later) in a book."</li>
-                            <li><span className="bg-cardborder px-1 rounded-md">Ona cįžoš'rä.</span> "Let her write (later)."</li>
+                            <li><WordBox word={"Onoj icąžäši'fä (fa) acäžiši'cäka."} /> "They should be writing in a book (later)."</li>
+                            <li><WordBox word={"Ona cįžoš'ra."} /> "Let her write (later)."</li>
                         </ul>
                     </span>
                     <h1 className="text-2xl font-[600]">Stress Rules</h1>
@@ -332,28 +359,28 @@ export default function About() {
                     </ul>
                     <h1 className="text-2xl font-[600]">Modifiers (Patterns)</h1>
                     <span>
-                        Modifiers are four-vowel patterns inserted into replaceable or combination word roots. Empty slots are retained and the vowels are shifted accordingly. They define the word's specific function or meaning. The schematic for a modifier is as follows, where C = consonant and V = vowel: V<sub>1</sub> C<sub>1</sub> V<sub>2</sub> C<sub>2</sub> V<sub>3</sub> C<sub>3</sub> V<sub>4</sub>. For example, if we take the replaceable root <span className="bg-cardborder px-1 rounded-md">fsn</span> (C<sub>1</sub> = f, C<sub>2</sub> = s, C<sub>3</sub> = n) and apply the modifier <span className="bg-cardborder px-1 rounded-md">aią-</span> (V<sub>1</sub> = a, V<sub>2</sub> = i, V<sub>3</sub> = ą, V<sub>4</sub> = -), it will result in the stem <span className="bg-cardborder px-1 rounded-md">afisąn</span>, meaning "person." The hyphen represents an empty slot.
+                        Modifiers are four-vowel patterns inserted into replaceable or combination word roots. Empty slots are retained and the vowels are shifted accordingly. They define the word's specific function or meaning. The schematic for a modifier is as follows, where C = consonant and V = vowel: V<sub>1</sub> C<sub>1</sub> V<sub>2</sub> C<sub>2</sub> V<sub>3</sub> C<sub>3</sub> V<sub>4</sub>. For example, if we take the replaceable root <WordBox word={"fsn"} /> (C<sub>1</sub> = f, C<sub>2</sub> = s, C<sub>3</sub> = n) and apply the modifier <WordBox word={"aią-"} /> (V<sub>1</sub> = a, V<sub>2</sub> = i, V<sub>3</sub> = ą, V<sub>4</sub> = -), it will result in the stem <WordBox word={"afisąn"} />, meaning "person." The hyphen represents an empty slot.
                     </span>
                     <span className="text-xl font-[600]">
                         All modifiers:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li>Concrete noun: <span className="bg-cardborder px-1 rounded-md">aią-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"fsn"} wordLink={"fsn"} /></span> + <span className="bg-cardborder px-1 rounded-md">aią-</span> → afisąn, "person")</li>
-                            <li>Abstract noun: <span className="bg-cardborder px-1 rounded-md">äaa-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"jdn"} wordLink={"jdn"} /></span> + <span className="bg-cardborder px-1 rounded-md">äaa-</span> → äjadan, "existance")</li>
-                            <li>Locative nominalization: <span className="bg-cardborder px-1 rounded-md">-öoa</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"dtg"} wordLink={"dtg"} /></span> + <span className="bg-cardborder px-1 rounded-md">-öoa</span>→ dötoga, "trail")</li>
-                            <li>Result nominalization: <span className="bg-cardborder px-1 rounded-md">aäii</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"cžš"} wordLink={"cžš"} /></span> + <span className="bg-cardborder px-1 rounded-md">aäii</span>→ acäžiši, "book")</li>
-                            <li>Adjective derivation: <span className="bg-cardborder px-1 rounded-md">iäoa</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"gds"} wordLink={"gds"} /></span> + <span className="bg-cardborder px-1 rounded-md">iäoa</span> → igädosa, "good")</li>
-                            <li>Color adjective derivation: <span className="bg-cardborder px-1 rounded-md">-äoą</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"blr"} wordLink={"blr"} /></span> + <span className="bg-cardborder px-1 rounded-md">-äoą</span> → bälorą, "white")</li>
-                            <li>Infinitive verb: <span className="bg-cardborder px-1 rounded-md">-aa-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"kmr"} wordLink={"kmr"} /></span> + <span className="bg-cardborder px-1 rounded-md">-aa-</span> → kamar, "to digest")</li>
-                            <li>Infinitive imperfective verb: <span className="bg-cardborder px-1 rounded-md">-äi-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"đčj"} wordLink={"đčj"} /></span> + <span className="bg-cardborder px-1 rounded-md">-äi-</span> → đäčij, "to be isolating," no exact English translation as it doesn't exist)</li>
-                            <li>Present tense verb: <span className="bg-cardborder px-1 rounded-md">oiaä</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"klt"} wordLink={"klt"} /></span> + <span className="bg-cardborder px-1 rounded-md">oiaä</span> → okilatä, "want")</li>
-                            <li>Present imperfective tense verb: <span className="bg-cardborder px-1 rounded-md">aąa-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"lfd"} wordLink={"lfd"} /></span> + <span className="bg-cardborder px-1 rounded-md">aąa-</span> → aląfad, "flying")</li>
-                            <li>Past tense verb: <span className="bg-cardborder px-1 rounded-md">oaö-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"ghv"} wordLink={"ghv"} /></span> + <span className="bg-cardborder px-1 rounded-md">oaö-</span> → ogahöv, "made")</li>
-                            <li>Past imperfective tense verb: <span className="bg-cardborder px-1 rounded-md">ääio</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"vtr"} wordLink={"vtr"} /></span> + <span className="bg-cardborder px-1 rounded-md">ääio</span> → ävätiro, "was seeing")</li>
-                            <li>Future tense verb: <span className="bg-cardborder px-1 rounded-md">-įo-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"mkr"} wordLink={"mkr"} /></span> + <span className="bg-cardborder px-1 rounded-md">-įo-</span> → mįkor, "will enjoy")</li>
-                            <li>Future imperfective tense verb: <span className="bg-cardborder px-1 rounded-md">iąäi</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"cgž"} wordLink={"cgž"} /></span> + <span className="bg-cardborder px-1 rounded-md">iąäi</span> → icągäži, "will be uniting")</li>
-                            <li>Verb nominalization: <span className="bg-cardborder px-1 rounded-md">äao-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"klt"} wordLink={"klt"} /></span> + <span className="bg-cardborder px-1 rounded-md">äao-</span> → äkalot, "requirement")</li>
-                            <li>Verb-to-adverb derivation: <span className="bg-cardborder px-1 rounded-md">äöä-</span> (<span className="bg-cardborder px-1 rounded-md"><WordLink word={"çnz"} wordLink={"çnz"} /></span> + <span className="bg-cardborder px-1 rounded-md">äöä-</span> → äçönäz, "lightly")</li>
+                            <li>Concrete noun: <WordBox word={"aią-"} /> (<WordBox word={"fsn"} link={true} wordLink={"fsn"}/> + <WordBox word={"aią-"} /> → <WordBox word={"afisąn"} />, "person")</li>
+                            <li>Abstract noun: <WordBox word={"äaa-"} /> (<WordBox word={"jdn"} link={true} wordLink={"jdn"}/> + <WordBox word={"äaa-"} /> → <WordBox word={"äjadan"} />, "existance")</li>
+                            <li>Locative nominalization: <WordBox word={"-öoa"} /> (<WordBox word={"dtg"} link={true} wordLink={"dtg"}/> + <WordBox word={"-öoa"} /> → <WordBox word={"dötoga"} />, "trail")</li>
+                            <li>Result nominalization: <WordBox word={"aäii"} /> (<WordBox word={"cžš"} link={true} wordLink={"cžš"}/> + <WordBox word={"aäii"} /> → <WordBox word={"acäžiši"} />, "book")</li>
+                            <li>Adjective derivation: <WordBox word={"iäoa"} /> (<WordBox word={"gds"} link={true} wordLink={"gds"}/> + <WordBox word={"iäoa"} /> → <WordBox word={"igädosa"} />, "good")</li>
+                            <li>Color adjective derivation: <WordBox word={"-äoą"} /> (<WordBox word={"blr"} link={true} wordLink={"blr"}/> + <WordBox word={"-äoą"} /> → <WordBox word={"bälorą"} />, "white")</li>
+                            <li>Infinitive verb: <WordBox word={"-aa-"} /> (<WordBox word={"kmr"} link={true} wordLink={"kmr"}/> + <WordBox word={"-aa-"} /> → <WordBox word={"kamar"} />, "to digest")</li>
+                            <li>Infinitive imperfective verb: <WordBox word={"-äi-"} /> (<WordBox word={"đčj"} link={true} wordLink={"đčj"}/> + <WordBox word={"-äi-"} /> → <WordBox word={"đäčij"} />, "to be isolating," no exact English translation as it doesn't exist)</li>
+                            <li>Present tense verb: <WordBox word={"oiaä"} /> (<WordBox word={"klt"} link={true} wordLink={"klt"}/> + <WordBox word={"oiaä"} /> → <WordBox word={"okilatä"} />, "want")</li>
+                            <li>Present imperfective tense verb: <WordBox word={"aąa-"} /> (<WordBox word={"lfd"} link={true} wordLink={"lfd"}/> + <WordBox word={"aąa-"} /> → <WordBox word={"aląfad"} />, "flying")</li>
+                            <li>Past tense verb: <WordBox word={"oaö-"} /> (<WordBox word={"ghv"} link={true} wordLink={"ghv"}/> + <WordBox word={"oaö-"} /> → <WordBox word={"ogahöv"} />, "made")</li>
+                            <li>Past imperfective tense verb: <WordBox word={"ääio"} /> (<WordBox word={"vtr"} link={true} wordLink={"vtr"}/> + <WordBox word={"ääio"} /> → <WordBox word={"ävätiro"} />, "was seeing")</li>
+                            <li>Future tense verb: <WordBox word={"-įo-"} /> (<WordBox word={"mkr"} link={true} wordLink={"mkr"}/> + <WordBox word={"-įo-"} /> → <WordBox word={"mįkor"} />, "will enjoy")</li>
+                            <li>Future imperfective tense verb: <WordBox word={"iąäi"} /> (<WordBox word={"cgž"} link={true} wordLink={"cgž"}/> + <WordBox word={"iąäi"} /> → <WordBox word={"icągäži"} />, "will be uniting")</li>
+                            <li>Verb nominalization: <WordBox word={"äao-"} /> (<WordBox word={"klt"} link={true} wordLink={"klt"}/> + <WordBox word={"äao-"} /> → <WordBox word={"äkalot"} />, "requirement")</li>
+                            <li>Verb-to-adverb derivation: <WordBox word={"äöä-"} /> (<WordBox word={"çnz"} link={true} wordLink={"çnz"}/> + <WordBox word={"äöä-"} /> → <WordBox word={"äçönäz"} />, "lightly")</li>
                         </ul>
                     </span>
                     <span>
@@ -361,44 +388,47 @@ export default function About() {
                     </span>
                     <h1 className="text-2xl font-[600]">Affixes</h1>
                     <span>
-                        Affixes attach to stems using an apostrophe. Multiple suffixes follow a fixed order: Case → Mood → Modifier → Size → Article → Number. Prefixes follow placement from top to bottom closest to the stem. (<span className="bg-cardborder px-1 rounded-md">ąšal'gahav</span>, "destroyer," lit. "one who does the opposite of to build")
+                        Affixes attach to stems using an apostrophe. Multiple suffixes follow a fixed order: Case → Mood → Modifier → Size → Article → Number. Prefixes follow placement from top to bottom closest to the stem. (<WordBox word={"ąšal'gahav"} />, "destroyer," lit. "one who does the opposite of to build")
                     </span>
                     <span className="text-xl font-[600]">
                         Suffixes:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
                             <span className="font-[600] ml-5.5">By case (noun, adjective, or particle)</span>
-                            <li>Accusative: <span className="bg-cardborder px-1 rounded-md">ma</span></li>
-                            <li>Dative: <span className="bg-cardborder px-1 rounded-md">ja</span></li>
-                            <li>Possessor Genitive: <span className="bg-cardborder px-1 rounded-md">sö</span></li>
-                            <li>Possessed Genitive: <span className="bg-cardborder px-1 rounded-md">lö</span></li>
+                            <li>Accusative: <WordBox word={"ma"} /></li>
+                            <li>Dative: <WordBox word={"ja"} /></li>
+                            <li>Possessor Genitive: <WordBox word={"sö"} /></li>
+                            <li>Possessed Genitive: <WordBox word={"lö"} /></li>
+                            <li>Instrumental: <WordBox word={"ła"} /></li>
+                            <li>Locative: <WordBox word={"cä"} /></li>
+                            <li>Vocative: <WordBox word={"hä"} /></li>
                             <span className="font-[600] ml-5.5">By mood (verb)</span>
-                            <li>Imperative: <span className="bg-cardborder px-1 rounded-md">hö</span></li>
-                            <li>Conditional: <span className="bg-cardborder px-1 rounded-md">sä</span></li>
-                            <li>Narrow Optative: <span className="bg-cardborder px-1 rounded-md">fä</span></li>
-                            <li>Broad Optative: <span className="bg-cardborder px-1 rounded-md">vä</span></li>
-                            <li>Jussive: <span className="bg-cardborder px-1 rounded-md">ra</span></li>
-                            <li>Potential: <span className="bg-cardborder px-1 rounded-md">ga</span></li>
+                            <li>Imperative: <WordBox word={"hö"} /></li>
+                            <li>Conditional: <WordBox word={"sä"} /></li>
+                            <li>Narrow Optative: <WordBox word={"fä"} /></li>
+                            <li>Broad Optative: <WordBox word={"vä"} /></li>
+                            <li>Jussive: <WordBox word={"ra"} /></li>
+                            <li>Potential: <WordBox word={"ga"} /></li>
                             <span className="font-[600] ml-5.5">By modifier (any but particle)</span>
-                            <li>Adjectivization: <span className="bg-cardborder px-1 rounded-md">ha</span></li>
-                            <li>Demonymization: <span className="bg-cardborder px-1 rounded-md">rä</span></li>
+                            <li>Adjectivization: <WordBox word={"ha"} /></li>
+                            <li>Demonymization: <WordBox word={"rä"} /></li>
                             <span className="font-[600] ml-5.5">By size (any but particle)</span>
-                            <li>Diminutive: <span className="bg-cardborder px-1 rounded-md">dä</span></li>
-                            <li>Augmentative: <span className="bg-cardborder px-1 rounded-md">gä</span></li>
+                            <li>Diminutive: <WordBox word={"dä"} /></li>
+                            <li>Augmentative: <WordBox word={"gä"} /></li>
                             <span className="font-[600] ml-5.5">By article (noun)</span>
-                            <li>Definite: <span className="bg-cardborder px-1 rounded-md">ta</span></li>
-                            <li>Indefinite: <span className="bg-cardborder px-1 rounded-md">ka</span></li>
+                            <li>Definite: <WordBox word={"ta"} /></li>
+                            <li>Indefinite: <WordBox word={"ka"} /></li>
                             <span className="font-[600] ml-5.5">By number (noun or adjective)</span>
-                            <li>Plural: <span className="bg-cardborder px-1 rounded-md">j</span> (exempt from apostrophe rule)</li>
+                            <li>Plural: <WordBox word={"j"} /> (exempt from apostrophe rule)</li>
                         </ul>
                     </span>
                     <span className="text-xl font-[600]">
                         Prefixes:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li>Antonymization: <span className="bg-cardborder px-1 rounded-md">al</span> (produces the opposite meaning)</li>
-                            <li>Agentive derivation: <span className="bg-cardborder px-1 rounded-md">ąš</span></li>
-                            <li>Proper noun indicator particle: <span className="bg-cardborder px-1 rounded-md">ök</span> (optional usage)</li>
+                            <li>Antonymization: <WordBox word={"al"} /> (produces the opposite meaning)</li>
+                            <li>Agentive derivation: <WordBox word={"ąš"} /></li>
+                            <li>Proper noun indicator particle: <WordBox word={"ök"} link={true} wordLink={"ök"} /> (optional usage)</li>
                         </ul>
                     </span>
                     <span className="text-[18px] font-[600]">
@@ -408,32 +438,59 @@ export default function About() {
                             <li>The nominative case is zero-marked.</li>
                             <li>The indicative mood is zero-marked.</li>
                             <li>The singular number is zero-marked.</li>
-                            <li>Only one apostrophe is used to separate the affix list from the stem. (<span className="bg-cardborder px-1 rounded-md">zav'söta</span> for "the dog's" instead of <span className="bg-cardborder px-1 rounded-md">zav'sö'ta</span>.)</li>
+                            <li>Only one apostrophe is used to separate the affix list from the stem. (<WordBox word={"zav'söta"} /> for "the dog's" instead of <WordBox word={"zav'sö'ta"} />.)</li>
                         </ul>
                     </span>
-                    
                     <h1 className="text-2xl font-[600]">Syntax</h1>
                     <ul className="list-disc list-inside">
                         <li>Sentences mainly follow subject-verb-object order but can change to place emphasis on other words.</li>
-                        <li>Example: <span className="bg-cardborder px-1 rounded-md">Ök'Ljam'ma ja ovatör</span> meaning "I saw Liam" makes emphasis on seeing Liam specifically by altering SVO to be OSV.</li>
+                        <li>Example: <WordBox word={"Ök'Ljam'ma ja ovatör"} /> meaning "I saw Liam" makes emphasis on seeing Liam specifically by altering SVO to be OSV.</li>
                         <li>Prepositions precede the object: Subject Verb Preposition Object.</li>
                         <li>Adverbs can precede or follow verbs.</li>
                         <li>Preceded words are used for emphasis.</li>
-                        <li>Interrogative sentences are formed by using the particle <span className="bg-cardborder px-1 rounded-md"><WordLink word={"čo"} wordLink={"čo"} /></span> after what is interrogated. (<span className="bg-cardborder px-1 rounded-md">Ti omikarä čo'ma?</span> means "What do you want?" However, we can change the placement to this <span className="bg-cardborder px-1 rounded-md">Ti omikarä čo äta'ma?</span>, which means "Do you <span className="font-[600]">want</span> this?" or change it to <span className="bg-cardborder px-1 rounded-md">Ti čo omikarä äta'ma?</span>, which means "Do <span className="font-[600]">you</span> want this?")</li>
+                        <li>Interrogative sentences are formed by using the particle <WordBox word={"čo"} link={true} wordLink={"čo"} /> after what is interrogated. (<WordBox word={"Ti omikarä čo'ma?"} /> means "What do you want?" However, we can change the placement to this <WordBox word={"Ti omikarä čo äta'ma?"} />, which means "Do you <span className="font-[600]">want</span> this?" or change it to <WordBox word={"Ti čo omikarä äta'ma?"} />, which means "Do <span className="font-[600]">you</span> want this?")</li>
                     </ul>
+                    <span className="text-xl font-[600]">
+                        Relative clauses:
+                        <br/>
+                        <ul className="list-disc list-inside font-normal text-[16px]">
+                            <li>Introduced by the particle <WordBox word={"na-čo"} /></li>
+                            <li>The relative clause follows the noun it modifies.</li>
+                            <li>Agreement is mantained.</li>
+                            <li>There is no separate marker for defining and non-defining relative clauses. The distinction is made only by intonation in speech and by commas in writting.</li>
+                            <li>Example of defining: <WordBox word={"Afisąn'ta na-čo igädosa ňįkog'ga mi'ma."} /> "The person who is good should help me."</li>
+                            <li>Example of non-defining: <WordBox word={"Afisąn'ta, na-čo ovibadä ňäkig ƀan'maj, ňįkog'ga mi'ma."} /> "The person, who likes helping others, should help me."</li>
+                        </ul>
+                    </span>
+                    <span className="text-xl font-[600]">
+                        Complementary clauses:
+                        <br/>
+                        <ul className="list-disc list-inside font-normal text-[16px]">
+                            <li>Introduced by the particle <WordBox word={"çą"} link={true} wordLink={"çą"} /></li>
+                            <li>Example: <WordBox word={"Ja ošinatä çą ja ovibadä'gä ätat'ma."} /> "I know that I really like that."</li>
+                        </ul>
+                    </span>
+                    <span className="text-xl font-[600]">
+                        Adverbial clauses:
+                        <br/>
+                        <ul className="list-disc list-inside font-normal text-[16px]">
+                            <li>Introduced by all adverbial clause particles like <WordBox word={"ho"} link={true} wordLink={"ho"} /> and <WordBox word={"gät"} link={true} wordLink={"gät"} /></li>
+                            <li>Example: <WordBox word={"Ja nä ošinatä ho ja okilatä o nä äta'ma."} /> "I don't know if I want this or not."</li>
+                        </ul>
+                    </span>
                     <span className="text-xl font-[600]">
                         Negation:
                         <br/>
                         <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li>Word-level negation: prefix <span className="bg-cardborder px-1 rounded-md">al</span> creates antonyms.</li>
-                            <li>Clause-level negation: particle <span className="bg-cardborder px-1 rounded-md"><WordLink word={"nä"} wordLink={"nä"} /></span> expresses "not" or "no."</li>
+                            <li>Word-level negation: prefix <WordBox word={"al"} /> creates antonyms.</li>
+                            <li>Clause-level negation: particle <WordBox word={"nä"} link={true} wordLink={"nä"} /> expresses "not" or "no."</li>
                             <li>Double negation by using both types is used for emphasis.</li>
-                            <li>Example: <span className="bg-cardborder px-1 rounded-md">Ja nä ošinatä al'tįk-čom'ma</span> "I don't know anything" (lit. "I not know nothing")</li>
+                            <li>Example: <WordBox word={"Ja nä ošinatä al'tįk-čom'ma."} /> "I don't know anything" (lit. "I not know nothing")</li>
                         </ul>
                     </span>
                     <h1 className="text-2xl font-[600]">Word Formation</h1>
                     <ul className="list-disc list-inside">
-                        <li>Two roots: Take the first consonant of the first root, the third consonant of the second root, and choose the second consonant from your root of choice. (For <span className="bg-cardborder px-1 rounded-md">çhb</span>, C<sub>1</sub> → ç and C<sub>2</sub> → h. For <span className="bg-cardborder px-1 rounded-md">ňjk</span>, C<sub>3</sub> → k. With that information we know that <span className="bg-cardborder px-1 rounded-md">çhb</span> + <span className="bg-cardborder px-1 rounded-md">ňjk</span> = <span className="bg-cardborder px-1 rounded-md">çhk</span>, "house, nostalgic place")</li>
+                        <li>Two roots: Take the first consonant of the first root, the third consonant of the second root, and choose the second consonant from your root of choice. (For <WordBox word={"çhb"} link={true} wordLink={"çhb"} />, C<sub>1</sub> → ç and C<sub>2</sub> → h. For <WordBox word={"ňjk"} link={true} wordLink={"ňjk"} />, C<sub>3</sub> → k. With that information we know that <WordBox word={"çhb"} /> + <WordBox word={"ňjk"} /> = <WordBox word={"çhk"} link={true} wordLink={"çhk"} />, "house, nostalgic place")</li>
                         <li>Three roots: Take the respective consonant from each root in sequence.</li>
                         <li>Combination words appear in the dictionary with a modifier applied. This doesn't mean the only available conjugation for that combination is the one presented. Combination words still function as roots.</li>
                     </ul>
@@ -441,24 +498,24 @@ export default function About() {
                     <ul className="list-disc list-inside">
                         <li>Stress is assumed and not marked in writing.</li>
                         <li>Punctuation follows Latin conventions: . , ? ! - : ; "…"</li>
-                        <li>The apostrophe <span className="bg-cardborder px-1 rounded-md">'</span> marks the boundaries between the stem and the affixes and it's mandatory in writing.</li>
+                        <li>The apostrophe <WordBox word={"'"} /> marks the boundaries between the stem and the affixes and it's mandatory in writing.</li>
                         <li>Äšakap has its own script but is primarily written in Latin. It can be observed through the dictionary.</li>
                     </ul>
                     <h1 className="text-2xl font-[600]">Pragmatics and Usage</h1>
                     <ul className="list-disc list-inside">
                         <li>Only informal "you" exists.</li>
-                        <li>Pronouns may be omitted when the verb carries the imperative or jussive mood modifier.</li>
+                        <li>Pronouns may be omitted when the verb carries the imperative or jussive mood modifier. (Assumes 2nd person singular for imperative, 3rd person neuter singular for jussive)</li>
                     </ul>
                     <h1 className="text-2xl font-[600]">Examples</h1>
                     <ul className="list-disc list-inside">
-                        <li><span className="bg-cardborder px-1 rounded-md">afisąn'mata</span> = <span className="bg-cardborder px-1 rounded-md"><WordLink word={"fsn"} wordLink={"fsn"} /></span> + <span className="bg-cardborder px-1 rounded-md">aią-</span> + accusative + definite → "the person (object)"</li>
-                        <li><span className="bg-cardborder px-1 rounded-md">al'omikarä</span> = <span className="bg-cardborder px-1 rounded-md"><WordLink word={"mkr"} wordLink={"mkr"} /></span> + <span className="bg-cardborder px-1 rounded-md">oiaä</span> + antonymization → "boring" (lit. "non-fun")</li>
+                        <li><WordBox word={"afisąn'mata"} /> = <WordBox word={"fsn"} link={true} wordLink={"fsn"} /> + <WordBox word={"aią-"} /> + accusative + definite → "the person (object)"</li>
+                        <li><WordBox word={"al'omikarä"} /> = <WordBox word={"mkr"} link={true} wordLink={"mkr"} /> + <WordBox word={"oiaä"} /> + antonymization → "boring" (lit. "non-fun")</li>
                     </ul>
                     <span className="font-[600]">
                         Äšakap:
                         <br/>
                         <span className="font-normal">
-                            <span className="bg-cardborder px-1 rounded-md">Ök'Arhäntin'rä ägavam'ta ičävopa ojidanä äfalar'ma ifädora'ma sa fät'ja äbaran'jaj isäpora'jaj: älagas, äçacat i äjadag.</span>
+                            <WordBox word={"Ök'Arhäntin'rä ägavam'ta ičävopa ojidanä äfalar'ma ifädora'ma sa fät'ła äbaran'łaj isäpora'łaj: älagas, äçacat i äjadag."} />
                         </span>
                     </span>
                     <span className="font-[600]">
