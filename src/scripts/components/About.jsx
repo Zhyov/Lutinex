@@ -116,40 +116,59 @@ export default function About() {
                         <br/>
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <thead>
                             <tr>
                                 <th colSpan={2}>Pronoun</th>
                                 <th>Singular</th>
                                 <th>Plural</th>
+                                <th>Reflective Sg.</th>
+                                <th>Reflective Pl.</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <th colSpan={2}>1st</th>
                                 <td>ja</td>
                                 <td>jaj</td>
+                                <td>ja-ƀä</td>
+                                <td>ja-ƀäj</td>
                             </tr>
                             <tr>
                                 <th colSpan={2}>2nd</th>
                                 <td>ti</td>
                                 <td>tij</td>
+                                <td>ti-ƀä</td>
+                                <td>ti-ƀäj</td>
                             </tr>
                             <tr>
                                 <th rowSpan={3}>3rd</th>
                                 <th>Masculine</th>
                                 <td>on</td>
                                 <td>onj</td>
+                                <td>on-ƀä</td>
+                                <td>on-ƀäj</td>
                             </tr>
                             <tr>
                                 <th>Feminine</th>
                                 <td>ona</td>
                                 <td>onaj</td>
+                                <td>ona-ƀä</td>
+                                <td>ona-ƀäj</td>
                             </tr>
                             <tr>
                                 <th>Neuter</th>
                                 <td>ono</td>
                                 <td>onoj</td>
+                                <td>ono-ƀä</td>
+                                <td>ono-ƀäj</td>
                             </tr>
+                        </tbody>
                         </table>
                         </div>
                     </div>
+                    <span>
+                        The plural suffix <WordBox word={"j"} /> is not part of the stem. It attaches after all other affixes. (<WordBox word={"ti'maj"} />, "you all (accusative)" not <WordBox word={"tij'maj"} />)
+                    </span>
                     <div className="text-xl font-[600]">
                         Agreement rules:
                         <br/>
@@ -159,11 +178,14 @@ export default function About() {
                         </ul>
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <thead>
                             <tr>
                                 <th colSpan={2}>Case</th>
                                 <th>Singular</th>
                                 <th>Plural</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <th colSpan={2}>Nominative</th>
                                 <td>afisąn igädosa</td>
@@ -205,6 +227,7 @@ export default function About() {
                                 <td>afisąn'hä igädosa'hä</td>
                                 <td>afisąn'häj igädosa'häj</td>
                             </tr>
+                        </tbody>
                         </table>
                         </div>
                     </div>
@@ -216,6 +239,7 @@ export default function About() {
                         <br/>
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <thead>
                             <tr>
                                 <th rowSpan={2} colSpan={2}>Aspect</th>
                                 <th rowSpan={2} colSpan={2}>Imperative</th>
@@ -228,6 +252,8 @@ export default function About() {
                                 <th>Narrow</th>
                                 <th>Broad</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <th colSpan={2}>Imperfective</th>
                                 <td colSpan={2}>acąžaš'hö</td>
@@ -246,6 +272,7 @@ export default function About() {
                                 <td colSpan={2}>ocižašä'ra</td>
                                 <td colSpan={2}>ocižašä'ga</td>
                             </tr>
+                        </tbody>
                         </table>
                         </div>
                     </div>
@@ -262,6 +289,7 @@ export default function About() {
                         <br/>
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <thead>
                             <tr>
                                 <th rowSpan={2} colSpan={2}>Aspect</th>
                                 <th rowSpan={2} colSpan={2}>Imperative</th>
@@ -274,6 +302,8 @@ export default function About() {
                                 <th>Narrow</th>
                                 <th>Broad</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <th colSpan={2}>Imperfective</th>
                                 <td colSpan={2}>äcäžišo'hö</td>
@@ -292,6 +322,7 @@ export default function About() {
                                 <td colSpan={2}>ocažöš'ra</td>
                                 <td colSpan={2}>ocažöš'ga</td>
                             </tr>
+                        </tbody>
                         </table>
                         </div>
                     </div>
@@ -308,6 +339,7 @@ export default function About() {
                         <br/>
                         <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                        <thead>
                             <tr>
                                 <th rowSpan={2} colSpan={2}>Aspect</th>
                                 <th rowSpan={2} colSpan={2}>Imperative</th>
@@ -320,6 +352,8 @@ export default function About() {
                                 <th>Narrow</th>
                                 <th>Broad</th>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <th colSpan={2}>Imperfective</th>
                                 <td colSpan={2}>icąžäši'hö</td>
@@ -338,6 +372,7 @@ export default function About() {
                                 <td colSpan={2}>cįžoš'ra</td>
                                 <td colSpan={2}>cįžoš'ga</td>
                             </tr>
+                        </tbody>
                         </table>
                         </div>
                     </div>
@@ -388,7 +423,7 @@ export default function About() {
                     </span>
                     <h1 className="text-2xl font-[600]">Affixes</h1>
                     <span>
-                        Affixes attach to stems using an apostrophe. Multiple suffixes follow a fixed order: Case → Mood → Modifier → Size → Article → Number. Prefixes follow placement from top to bottom closest to the stem. (<WordBox word={"ąšal'gahav"} />, "destroyer," lit. "one who does the opposite of to build")
+                        Affixes attach to stems using an apostrophe. Multiple suffixes follow a fixed order: Case → Mood → Modifier → Size → Degree → Article → Number. Prefixes follow placement from top to bottom closest to the stem. (<WordBox word={"ąšal'gahav"} />, "destroyer," lit. "one who does the opposite of to build")
                     </span>
                     <span className="text-xl font-[600]">
                         Suffixes:
@@ -415,6 +450,12 @@ export default function About() {
                             <span className="font-[600] ml-5.5">By size (any but particle)</span>
                             <li>Diminutive: <WordBox word={"dä"} /></li>
                             <li>Augmentative: <WordBox word={"gä"} /></li>
+                            <span className="font-[600] ml-5.5">By degree of comparison (adjective or adverb)</span>
+                            <li>Superior superlative: <WordBox word={"kä"} /></li>
+                            <li>Superior comparative: <WordBox word={"tä"} /></li>
+                            <li>Equal comparative: <WordBox word={"đä"} /></li>
+                            <li>Inferior comparative: <WordBox word={"ɉä"} /></li>
+                            <li>Inferior superlative: <WordBox word={"šä"} /></li>
                             <span className="font-[600] ml-5.5">By article (noun)</span>
                             <li>Definite: <WordBox word={"ta"} /></li>
                             <li>Indefinite: <WordBox word={"ka"} /></li>
@@ -428,7 +469,9 @@ export default function About() {
                         <ul className="list-disc list-inside font-normal text-[16px]">
                             <li>Antonymization: <WordBox word={"al"} /> (produces the opposite meaning)</li>
                             <li>Agentive derivation: <WordBox word={"ąš"} /></li>
+                            <li>Politeness particle: <WordBox word={"im"} /></li>
                             <li>Proper noun indicator particle: <WordBox word={"ök"} link={true} wordLink={"ök"} /> (optional usage)</li>
+                        
                         </ul>
                     </span>
                     <span className="text-[18px] font-[600]">
@@ -438,18 +481,43 @@ export default function About() {
                             <li>The nominative case is zero-marked.</li>
                             <li>The indicative mood is zero-marked.</li>
                             <li>The singular number is zero-marked.</li>
-                            <li>Only one apostrophe is used to separate the affix list from the stem. (<WordBox word={"zav'söta"} /> for "the dog's" instead of <WordBox word={"zav'sö'ta"} />.)</li>
+                            <li>Only one apostrophe is used to separate the affix list from the stem. (<WordBox word={"zav'sötaj"} /> for "the dogs'" instead of <WordBox word={"zav'sö'ta'j"} />.)</li>
                         </ul>
                     </span>
                     <h1 className="text-2xl font-[600]">Syntax</h1>
                     <ul className="list-disc list-inside">
                         <li>Sentences mainly follow subject-verb-object order but can change to place emphasis on other words.</li>
                         <li>Example: <WordBox word={"Ök'Ljam'ma ja ovatör"} /> meaning "I saw Liam" makes emphasis on seeing Liam specifically by altering SVO to be OSV.</li>
-                        <li>Prepositions precede the object: Subject Verb Preposition Object.</li>
+                        <li>Most particles precede the object.</li>
                         <li>Adverbs can precede or follow verbs.</li>
                         <li>Preceded words are used for emphasis.</li>
-                        <li>Interrogative sentences are formed by using the particle <WordBox word={"čo"} link={true} wordLink={"čo"} /> after what is interrogated. (<WordBox word={"Ti omikarä čo'ma?"} /> means "What do you want?" However, we can change the placement to this <WordBox word={"Ti omikarä čo äta'ma?"} />, which means "Do you <span className="font-[600]">want</span> this?" or change it to <WordBox word={"Ti čo omikarä äta'ma?"} />, which means "Do <span className="font-[600]">you</span> want this?")</li>
+                        <li>Interrogative sentences are formed by using the particle <WordBox word={"čo"} link={true} wordLink={"čo"} /> after what is interrogated.</li>
+                        <li>Object interrogative: <WordBox word={"Ti omikarä čo'ma?"} />, "WHAT do you want?" Do note that <WordBox word={"čo"} /> must be inflicted with the proper affixes to show its relationship in the sentence.</li>
+                        <li>Verb interrogative: <WordBox word={"Ti omikarä čo äta'ma?"} />, "Do you WANT this?"</li>
+                        <li>Subject interrogative: <WordBox word={"Ti čo omikarä äta'ma?"} />, "Do YOU want this?"</li>
                     </ul>
+                    <span className="text-xl font-[600]">
+                        Negation:
+                        <br/>
+                        <ul className="list-disc list-inside font-normal text-[16px]">
+                            <li>Word-level negation: prefix <WordBox word={"al"} /> creates antonyms.</li>
+                            <li>Clause-level negation: particle <WordBox word={"nä"} link={true} wordLink={"nä"} /> expresses "not" or "no."</li>
+                            <li>Double negation by using both types is used for emphasis.</li>
+                            <li>Example: <WordBox word={"Ja nä ošinatä al'tįk-čom'ma."} /> "I don't know anything" (lit. "I not know nothing")</li>
+                        </ul>
+                    </span>
+                    <span className="text-xl font-[600]">
+                        Infinitival constructions:
+                        <br/>
+                        <ul className="list-disc list-inside font-normal text-[16px]">
+                            <li>Finite verbs can govern an infinitive</li>
+                            <li>The infinitive serves as the complement of the main verb.</li>
+                            <li>The subject of the infinitive is normally the same as the subject of the finite verb.</li>
+                            <li>The infinitive itself can take objects, adverbs, or prepositional phrases just like a finite verb.</li>
+                            <li>Example: <WordBox word={"Ja omikarä takap."} /> "I like to talk."</li>
+                            <li>Example with an object: <WordBox word={"Ja omikarä takap vä ti'ja na zav'maj."} /> "I like to talk to you about dogs."</li>
+                        </ul>
+                    </span>
                     <span className="text-xl font-[600]">
                         Relative clauses:
                         <br/>
@@ -478,16 +546,6 @@ export default function About() {
                             <li>Example: <WordBox word={"Ja nä ošinatä ho ja okilatä o nä äta'ma."} /> "I don't know if I want this or not."</li>
                         </ul>
                     </span>
-                    <span className="text-xl font-[600]">
-                        Negation:
-                        <br/>
-                        <ul className="list-disc list-inside font-normal text-[16px]">
-                            <li>Word-level negation: prefix <WordBox word={"al"} /> creates antonyms.</li>
-                            <li>Clause-level negation: particle <WordBox word={"nä"} link={true} wordLink={"nä"} /> expresses "not" or "no."</li>
-                            <li>Double negation by using both types is used for emphasis.</li>
-                            <li>Example: <WordBox word={"Ja nä ošinatä al'tįk-čom'ma."} /> "I don't know anything" (lit. "I not know nothing")</li>
-                        </ul>
-                    </span>
                     <h1 className="text-2xl font-[600]">Word Formation</h1>
                     <ul className="list-disc list-inside">
                         <li>Two roots: Take the first consonant of the first root, the third consonant of the second root, and choose the second consonant from your root of choice. (For <WordBox word={"çhb"} link={true} wordLink={"çhb"} />, C<sub>1</sub> → ç and C<sub>2</sub> → h. For <WordBox word={"ňjk"} link={true} wordLink={"ňjk"} />, C<sub>3</sub> → k. With that information we know that <WordBox word={"çhb"} /> + <WordBox word={"ňjk"} /> = <WordBox word={"çhk"} link={true} wordLink={"çhk"} />, "house, nostalgic place")</li>
@@ -503,19 +561,25 @@ export default function About() {
                     </ul>
                     <h1 className="text-2xl font-[600]">Pragmatics and Usage</h1>
                     <ul className="list-disc list-inside">
-                        <li>Only informal "you" exists.</li>
+                        <li>Formality for pronouns is expressed through the prefix <WordBox word={"im"} />. In a polite and complete clause, the particle <WordBox word={"im"} link={true} wordLink={"im"} /> appears before the subject.</li>
+                        <li>Prefix example: <WordBox word={"Im'ti owifawä igädosa."} /> "You (formal) are good."</li>
+                        <li>Particle example: <WordBox word={"Im (ti) oňikagä'hö mi'ma."} /> "(Please) help me."</li>
                         <li>Pronouns may be omitted when the verb carries the imperative or jussive mood modifier. (Assumes 2nd person singular for imperative, 3rd person neuter singular for jussive)</li>
+                        <li>Numbers are expressed using a positional decimal system, where each digit represents a multiple of a power of 10.</li>
+                        <li>Example: <WordBox word={"Bät žalä bät đät väv."} /> "2024" (lit. "2 × 1000 + 2 × 10 + 4")</li>
+                        <li>Ordinal numbers are expressed by placing the particle <WordBox word={"pi"} link={true} wordLink={"pi"} /> before a cardinal number. </li>
+                        <li>Example: <WordBox word={"Ja owaföw pi fät."} /> "I was third."</li>
                     </ul>
                     <h1 className="text-2xl font-[600]">Examples</h1>
                     <ul className="list-disc list-inside">
-                        <li><WordBox word={"afisąn'mata"} /> = <WordBox word={"fsn"} link={true} wordLink={"fsn"} /> + <WordBox word={"aią-"} /> + accusative + definite → "the person (object)"</li>
-                        <li><WordBox word={"al'omikarä"} /> = <WordBox word={"mkr"} link={true} wordLink={"mkr"} /> + <WordBox word={"oiaä"} /> + antonymization → "boring" (lit. "non-fun")</li>
+                        <li><WordBox word={"afisąn'mata"} /> → <WordBox word={"fsn"} link={true} wordLink={"fsn"} /> + <WordBox word={"aią-"} /> + accusative + definite, "the person (object)"</li>
+                        <li><WordBox word={"al'omikarä"} /> → <WordBox word={"mkr"} link={true} wordLink={"mkr"} /> + <WordBox word={"oiaä"} /> + antonymization, "boring" (lit. "non-fun")</li>
                     </ul>
                     <span className="font-[600]">
                         Äšakap:
                         <br/>
                         <span className="font-normal">
-                            <WordBox word={"Ök'Arhäntin'rä ägavam'ta ičävopa ojidanä äfalar'ma ifädora'ma sa fät'ła äbaran'łaj isäpora'łaj: älagas, äçacat i äjadag."} />
+                            <WordBox word={"Ök'Arhäntin'rä ägavam'ta ičävopa owifawä äfalar'maka ifädora'ma sa fät'ła äbaran'łaj isäpora'łaj: älagas, äçacat i äjadag."} />
                         </span>
                     </span>
                     <span className="font-[600]">
