@@ -8,6 +8,11 @@ export default function DataItem({ stockData }) {
     const token = localStorage.getItem("token")
     const user = JSON.parse(localStorage.getItem("user"))
 
+    const [invalidShareAmountWarning, setInvalidShareAmountWarning] = useState(false)
+    const [insufficientFundsWarning, setInsufficientFundsWarning] = useState(false)
+    const [insufficientSharesWarning, setInsufficientSharesWarning] = useState(false)
+    const [successfullySoldMessage, setSuccessfullySoldMessage] = useState(false)
+    const [succesfullyBoughtMessage, setSuccesfullyBoughtMessage] = useState(false)
     const [selectedView, setSelectedView] = useState("price")
     const [buyAmount, setBuyAmount] = useState(1)
     const userMoney = user ? user.balance : 0
@@ -55,18 +60,34 @@ export default function DataItem({ stockData }) {
 
             if (!response.ok) {
                 const errorData = await response.json()
-                alert("Error: " + (errorData.message || response.statusText))
-                return
+                if (errorData.error === "Invalid number of shares") {
+                    setInvalidShareAmountWarning(true)
+                    setInsufficientFundsWarning(false)
+                    setSuccesfullyBoughtMessage(false)
+                    setInsufficientSharesWarning(false)
+                    setSuccessfullySoldMessage(false)
+                } else if (errorData.error === "Insufficient balance") {
+                    setInsufficientFundsWarning(true)
+                    setInvalidShareAmountWarning(false)
+                    setSuccesfullyBoughtMessage(false)
+                    setInsufficientSharesWarning(false)
+                    setSuccessfullySoldMessage(false)
+                } else {
+                    console.error("Error: " + (errorData.error || errorData.msg || response.statusText))
+                }
+            } else {
+                setInsufficientSharesWarning(false)
+                setSuccessfullySoldMessage(false)
+                setInvalidShareAmountWarning(false)
+                setInsufficientFundsWarning(false)
+                setSuccesfullyBoughtMessage(true)
+
+                setTimeout(() => {
+                    window.location.reload()
+                }, 3000)
             }
-
-            const data = await response.json()
-            alert(`Bought ${buyAmount} shares successfully!`)
-            console.log(data)
-
-            window.location.reload()
         } catch (err) {
             console.error(err)
-            alert("Something went wrong while buying shares.")
         }
     }
 
@@ -88,19 +109,35 @@ export default function DataItem({ stockData }) {
 
             if (!response.ok) {
                 const errorData = await response.json()
-                alert("Error: " + (errorData.message || response.statusText))
-                return
+                if (errorData.error === "Invalid number of shares") {
+                    setInvalidShareAmountWarning(true)
+                    setInsufficientFundsWarning(false)
+                    setSuccesfullyBoughtMessage(false)
+                    setInsufficientSharesWarning(false)
+                    setSuccessfullySoldMessage(false)
+                } else if (errorData.error === "Not enough shares to sell") {
+                    setInsufficientFundsWarning(false)
+                    setInvalidShareAmountWarning(false)
+                    setSuccesfullyBoughtMessage(false)
+                    setInsufficientSharesWarning(true)
+                    setSuccessfullySoldMessage(false)
+                } else {
+                    console.error("Error: " + (errorData.error || errorData.msg || response.statusText))
+                }
+            } else {
+                setInsufficientSharesWarning(false)
+                setSuccessfullySoldMessage(true)
+                setInvalidShareAmountWarning(false)
+                setInsufficientFundsWarning(false)
+                setSuccesfullyBoughtMessage(false)
+
+                setTimeout(() => {
+                    window.location.reload()
+                }, 3000)
             }
-
-            const data = await response.json()
-            alert(`Sold ${buyAmount} shares successfully!`)
-            console.log(data)
-
-            window.location.reload()
         } catch (err) {
             console.error(err)
-            alert("Something went wrong while selling shares.")
-       }
+        }
     }
 
     return (
@@ -113,7 +150,7 @@ export default function DataItem({ stockData }) {
                     Shares
                 </button>
             </div>
-            <div className="w-full h-64 flex align-middle justify-center">
+            <div className={`w-full h-64 flex align-middle justify-center ${!token ? "py-2" : ""}`}>
                 {selectedView === "price" ?
                     <Line data={lineData} className="my-auto" />
                     : 
@@ -132,6 +169,11 @@ export default function DataItem({ stockData }) {
                                 Sell Shares
                             </button>
                         </div>
+                        {invalidShareAmountWarning ? <span className="mx-auto w-full text-red-500">You can't buy that amount of shares!</span> : null}
+                        {insufficientFundsWarning ? <span className="mx-auto w-full text-red-500">You don't have enough money!</span> : null}
+                        {insufficientSharesWarning ? <span className="mx-auto w-full text-red-500">You don't have that amount of shares!</span> : null}
+                        {succesfullyBoughtMessage ? <span className="mx-auto w-full text-red-500">Succesfully bought {buyAmount} shares!</span> : null}
+                        {successfullySoldMessage ? <span className="mx-auto w-full text-red-500">Succesfully sold {buyAmount} shares!</span> : null}
                     </div>
                 ) : null
             }
