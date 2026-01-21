@@ -5,6 +5,10 @@
     --color-replaceable: oklch(0.73 0.1328 235.01);
     --color-special: oklch(0.6291 0.168 24.57);
     --color-combination: oklch(0.6677 0.1 160.24);
+    --color-noun: oklch(0.73 0.1328 235.01);
+    --color-verb: oklch(0.6677 0.1 160.24);
+    --color-adjective: oklch(0.8442 0.1543 111.18);
+    --color-particle: oklch(0.6291 0.168 24.57);
     --color-cardborder: oklch(0.3089 0.0038 264.51);
     --color-cardborderlight: oklch(0.3836 0.0033 286.24);
     --color-cardborderslight: oklch(0.4061 0.0033 286.25);

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import Navbar from "./Navbar"
-import WordCard from "./WordCard"
-import WordCardSkeleton from "./WordCardSkeleton"
+import LevotinWordCard from "./LevotinWordCard"
+import LevotinWordCardSkeleton from "./LevotinWordCardSkeleton"
 
-export default function Dictionary() {
+export default function LevotinDictionary() {
     const location = useLocation()
 
     const params = new URLSearchParams(location.search)
@@ -16,16 +16,11 @@ export default function Dictionary() {
     const [order, setOrder] = useState([])
     const [loading, setLoading] = useState(true)
     const [gridCols, setGridCols] = useState(1)
-    const [filterHex, setFilterHex] = useState("f")
 
     useEffect(() => {
-        const url = search.trim()
-            ? `https://lutinexapi.onrender.com/fetch?q=${encodeURIComponent(search)}&f=${filterHex}`
-            : `https://lutinexapi.onrender.com/fetch?f=${filterHex}`
+        document.title = "Ληβοτιν · Dictionary"
         
-        document.title = "Äšakap · Dictionary"
-        
-        fetch(url)
+        fetch(`https://lutinexapi.onrender.com/fetch/morphemes?q=${encodeURIComponent(search)}`)
             .then(res => res.json())
             .then(obj => {
                 setData(obj)
@@ -35,7 +30,7 @@ export default function Dictionary() {
                 console.error("Failed to fetch data:", err)
                 setLoading(false)
             })
-        fetch("https://lutinexapi.onrender.com/max")
+        fetch("https://lutinexapi.onrender.com/max/morpheme")
             .then(res => res.json())
             .then(obj => {
                 setMaxCount(obj.max)
@@ -43,7 +38,7 @@ export default function Dictionary() {
             .catch(err => {
                 console.error("Failed to fetch data:", err)
             })
-        fetch("https://lutinexapi.onrender.com/order")
+        fetch("https://lutinexapi.onrender.com/order/levotin")
             .then(res => res.json())
             .then(obj => {
                 setOrder(obj)
@@ -51,21 +46,21 @@ export default function Dictionary() {
             .catch(err => {
                 console.error("Failed to fetch data:", err)
             })
-    }, [search, filterHex])
+    }, [search])
 
     const compare = (a, b) => {
         const aIndex = order.indexOf(a.type)
         const bIndex = order.indexOf(b.type)
 
         if (aIndex === bIndex) {
-            return a.word.localeCompare(b.word)
+            return a.morpheme.localeCompare(b.morpheme)
         }
 
         return (aIndex === -1 ? Infinity : aIndex) - (bIndex === -1 ? Infinity : bIndex)
     }
 
     const words = data.sort(compare).map(element => {
-        return <WordCard key={element.id} word={element.word} meaning={element.meaning} type={element.type} />
+        return <LevotinWordCard key={element.id} morpheme={element.morpheme} meaning={element.meaning} type={element.type} />
     })
 
     const gridColsClass = {
@@ -76,10 +71,10 @@ export default function Dictionary() {
 
     return (
         <>
-            <Navbar gridEnabled={true} searchEnabled={true} filterEnabled={true} search={search} setSearch={setSearch} gridCols={gridCols} setGridCols={setGridCols} setFilterParam={setFilterHex} language={"eshakap"} />
-            <div className="text-xl my-2 text-center">Amijąçj: {data.length}/{maxCount}</div>
+            <Navbar gridEnabled={true} searchEnabled={true} filterEnabled={false} search={search} setSearch={setSearch} gridCols={gridCols} setGridCols={setGridCols} />
+            <div className="text-xl my-2 text-center">Λωττυχ: {data.length}/{maxCount}</div>
             <ul className={`grid ${gridColsClass} items-stretch mt-2 gap-2 mx-auto max-w-11/12 md:max-w-[min(90vw,1200px)]`}>
-                {loading ? Array(6).fill(0).map((_, i) => <WordCardSkeleton key={i} />) : words}
+                {loading ? Array(6).fill(0).map((_, i) => <LevotinWordCardSkeleton key={i} />) : words}
             </ul>
         </>
     )

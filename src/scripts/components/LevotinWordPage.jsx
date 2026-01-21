@@ -1,63 +1,45 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import Navbar from "./Navbar"
-import WordPageSkeleton from "./WordPageSkeleton"
+import LevotinWordPageSkeleton from "./LevotinWordPageSkeleton"
 
-export default function WordPage() {
+export default function LevotinWordPage() {
     const { word: specifiedWord } = useParams()
     const [data, setData] = useState([])
-    const [eshakap, setEshakap] = useState([])
 
     useEffect(() => {
         setLoading(true)
         setData([])
-        setEshakap([])
-        setWord("")
+        setMorpheme("")
         setUnsortedMeanings([])
         setType("")
         setPhonetic("")
-        setCombination([])
+        setChanges([])
     }, [specifiedWord])
 
     useEffect(() => {
-        document.title = "Äšakap · " + specifiedWord
-        fetch(`https://lutinexapi.onrender.com/word?q=${specifiedWord}`)
+        document.title = "Ληβοτιν · " + specifiedWord
+        fetch(`https://lutinexapi.onrender.com/word/morpheme?q=${specifiedWord}`)
             .then(res => res.json())
             .then(obj => setData(obj))
             .catch(err => console.error("Failed to fetch data:", err))
-
-        fetch(`https://lutinexapi.onrender.com/convert?q=${specifiedWord}`)
-            .then(res => res.json())
-            .then(obj => setEshakap(obj))
-            .catch(err => console.error("Failed to fetch data:", err))
     }, [specifiedWord])
-    
-    const eshakapElements = eshakap.map(element => {
-        const img0 = element.syllable[0]
-        const img1 = element.syllable[1]
 
-        return (
-            <div key={element.id} className="flex flex-col invert min-w-max items-center">
-                <img key={img1.id} src={img1.path} className={`ml-1.5 mt-1.5 size-3 eshakap-syllable-1-big ${img1.path.endsWith("/a.svg") ? "eshakap-a-big" : ""}`} />
-                <img key={img0.id} src={img0.path} className={`size-6`} />
-            </div>
-        )
-    })
 
-    const [word, setWord] = useState("")
+    const [morpheme, setMorpheme] = useState("")
     const [unsortedMeanings, setUnsortedMeanings] = useState([])
     const [type, setType] = useState("")
     const [phonetic, setPhonetic] = useState("")
-    const [combination, setCombination] = useState([])
+    const [changes, setChanges] = useState([])
     const [loading, setLoading] = useState(true)
     
     useEffect(() => {
         if (data.length > 0) {
-            setWord(data[0].word)
+            setMorpheme(data[0].morpheme)
             setUnsortedMeanings(data[0].meaning)
             setType(data[0].type)
             setPhonetic(data[0].phonetic)
-            setCombination(data[0].combination)
+            setChanges(data[0].changes)
             setLoading(false)
         }
     }, [data])
@@ -70,11 +52,11 @@ export default function WordPage() {
         )
     })
 
-    let combinationElement
-    if (type === "combination") {
-        combinationElement = (
+    let changesElement
+    if (changes) {
+        changesElement = (
             <span key={crypto.randomUUID()}>
-                <Link to={`/Lutinex/language/words/${combination[0]}`} className="text-blue-400 hover:underline">{combination[0]}</Link> and <Link to={`/Lutinex/language/words/${combination[1]}`} className="text-blue-400 hover:underline">{combination[1]}</Link>
+                {changes.join(", ")}
             </span>
         )
     }
@@ -83,28 +65,27 @@ export default function WordPage() {
         <>
         {
             loading
-            ? <WordPageSkeleton />
+            ? <LevotinWordPageSkeleton />
             : <>
             <Navbar gridEnabled={false} searchEnabled={false} filterEnabled={false} />
             <div className="flex flex-col items-stretch mt-2 gap-2 mx-auto max-w-11/12 md:max-w-[min(98vw,1500px)]">
                 <div className="flex flex-row gap-2 mt-2">
-                    <Link to="/Lutinex/language/dictionary">
+                    <Link to="/Lutinex/language/dictionary/levotin">
                         <img src="https://zhyov.github.io/Lutinex/assets/icon/back.svg" alt="back" className="size-10 p-3 rounded-md invert transition-colors hover:bg-neutral-300" />
                     </Link>
-                    <span className="text-4xl">{word}</span>
+                    <span className="text-4xl">-{morpheme}-</span>
                 </div>
                 <div className="shadow-sm flex-1 flex flex-wrap flex-col border-2 gap-1 border-cardborder bg-cardbg w-auto rounded-md duration-100">
-                    <div className="flex flex-col space-y-1 pb-4">
-                        <div className="flex flex-row w-full mb-1 pt-4 px-4">
-                            <div className="flex flex-row min-w-max">{eshakapElements}</div>
-                        </div>
-                        <span className="w-full text-[14px] text-neutral-400 px-4">/{phonetic}/</span>
+                    <div className="flex flex-col space-y-1 py-4">
+                        <span className="w-full text-xl px-4">
+                            Pronunciation: <span className="w-full text-[18px] text-neutral-400">/{phonetic}/</span>
+                        </span>
                         <span className="bg-cardborder h-0.5 w-full my-4"></span>
                         <span className="w-full text-2xl px-4">Broad Definition</span>
                         <span className="w-full text-[16px] px-4">{meanings}</span>
                         <span className="bg-cardborder h-0.5 w-full my-4"></span>
-                        <span className="w-full text-xl px-4">Word type: {type}</span>
-                        { type === "combination" && <span className="w-full text-xl pt-4 px-4">Combination of {combinationElement}</span> }
+                        <span className="w-full text-xl px-4">Morpheme type: {type}</span>
+                        { changes && <span className="w-full text-xl pt-4 px-4">Applies morphophonological changes: {changesElement}</span> }
                     </div>
                 </div>
             </div>

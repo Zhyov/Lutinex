@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom"
 import Home from "./components/Home"
 import Dictionary from "./components/Dictionary"
+import LevotinDictionary from "./components/LevotinDictionary"
+import LevotinAbout from "./components/LevotinAbout"
+import LevotinWordPage from "./components/LevotinWordPage"
 import About from "./components/About"
 import WordPage from "./components/WordPage"
 import StocksPage from "./components/StocksPage"
@@ -16,9 +19,12 @@ export default function App() {
         <Routes>
             <Route path="/Lutinex/" element={<Home />} />
             <Route path="/Lutinex/language/dictionary" element={<Dictionary />} />
+            <Route path="/Lutinex/language/dictionary/levotin" element={<LevotinDictionary />} />
             <Route path="/Lutinex/language/about" element={<About />} />
+            <Route path="/Lutinex/language/about/levotin" element={<LevotinAbout />} />
             <Route path="/Lutinex/country/stocks" element={<StocksPage />} />
             <Route path="/Lutinex/language/words/:word" element={<WordPage />} />
+            <Route path="/Lutinex/language/words/levotin/:word" element={<LevotinWordPage />} />
             <Route path="/Lutinex/signup" element={<SignUp />} />
             <Route path="/Lutinex/signin" element={<SignIn />} />
             <Route path="/Lutinex/users/:username" element={<UserPage />} />

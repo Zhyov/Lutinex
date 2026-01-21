@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
-export default function Navbar({ gridEnabled, searchEnabled, filterEnabled, search, setSearch, gridCols, setGridCols, setFilterParam }) {
+export default function Navbar({ gridEnabled, searchEnabled, filterEnabled, search, setSearch, gridCols, setGridCols, setFilterParam, language }) {
     const token = localStorage.getItem("token")
     const user = JSON.parse(localStorage.getItem("user"))
 
@@ -71,16 +71,26 @@ export default function Navbar({ gridEnabled, searchEnabled, filterEnabled, sear
                         <span className="text-[16px] text-white invert-50">Language</span>
                     </button>
                     {openMenu === "language" && (
-                        <div className="absolute -translate-x-1/8 translate-y-16 flex flex-nowrap flex-col items-center top-0 rounded-sm ring-1 w-26 ring-neutral-800 bg-dark">
+                        <div className="absolute -translate-x-1/6 translate-y-16 flex flex-nowrap flex-col items-center top-0 rounded-sm ring-1 w-32 ring-neutral-800 bg-dark">
                             <div className="flex flex-nowrap flex-col w-full">
                                 <Link to="/Lutinex/language/dictionary" className={hideOrNot}>
                                     <div className="flex flex-nowrap flex-row gap-x-2 p-2 rounded-md items-center justify-center transition-colors hover:bg-neutral-800 hover:*:invert-0">
-                                        <span className="text-[16px] text-white invert-50">Dictionary</span>
+                                        <span className="text-[16px] text-white invert-50">Eshakap Dict.</span>
+                                    </div>
+                                </Link>
+                                <Link to="/Lutinex/language/dictionary/levotin" className={hideOrNot}>
+                                    <div className="flex flex-nowrap flex-row gap-x-2 p-2 rounded-md items-center justify-center transition-colors hover:bg-neutral-800 hover:*:invert-0">
+                                        <span className="text-[16px] text-white invert-50">Levotin Dict.</span>
                                     </div>
                                 </Link>
                                 <Link to="/Lutinex/language/about" className={hideOrNot}>
                                     <div className="flex flex-nowrap flex-row gap-x-2 p-2 rounded-md items-center justify-center transition-colors hover:bg-neutral-800 hover:*:invert-0">
-                                        <span className="text-[16px] text-white invert-50">About</span>
+                                        <span className="text-[16px] text-white invert-50">About Eshakap</span>
+                                    </div>
+                                </Link>
+                                <Link to="/Lutinex/language/about/levotin" className={hideOrNot}>
+                                    <div className="flex flex-nowrap flex-row gap-x-2 p-2 rounded-md items-center justify-center transition-colors hover:bg-neutral-800 hover:*:invert-0">
+                                        <span className="text-[16px] text-white invert-50">About Levotin</span>
                                     </div>
                                 </Link>
                             </div>
@@ -182,7 +192,7 @@ export default function Navbar({ gridEnabled, searchEnabled, filterEnabled, sear
                         )}
                     </div>
                     <div className="flex flex-nowrap flex-row">
-                        <input type="text" placeholder="Oliňazä amijąç'maka" className="w-full md:w-auto focus:ring-2 placeholder:text-neutral-400 self-center pl-3 pr-3 pt-1.5 pb-1.5 align-middle rounded-md ring-1 ring-neutral-800 text-lg" value={search} onChange={element => setSearch(element.target.value)} />
+                        <input type="text" placeholder={`${language == "eshakap" ? "Oliňazä amijąç'maka" : "Λωρρυπησλεφ"}`} className="w-full md:w-auto focus:ring-2 placeholder:text-neutral-400 self-center pl-3 pr-3 pt-1.5 pb-1.5 align-middle rounded-md ring-1 ring-neutral-800 text-lg" value={search} onChange={element => setSearch(element.target.value)} />
                     </div>
                 </div> 
                 :   
