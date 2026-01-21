@@ -56,7 +56,7 @@ export default function LevotinWordPage() {
     if (changes) {
         changesElement = (
             <span key={crypto.randomUUID()}>
-                {changes.join(", ")}
+                {<Link to="/Lutinex/language/about/levotin/mcs#pattern" className="text-blue-500 hover:underline">{changes.join(", ")}</Link>}
             </span>
         )
     }
