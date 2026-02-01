@@ -25,7 +25,7 @@ export default function LevotinWordPageSkeleton() {
                         <span className="w-full text-2xl px-4">Broad Definition</span>
                         <span className="text-[16px] rounded-full bg-neutral-700 animate-pulse w-40 h-5 mx-4"></span>
                         <span className="bg-cardborder h-0.5 w-full my-4"></span>
-                        <span className="w-full text-xl flex flex-row gap-x-2 items-center px-4">Word type: <span className="rounded-full bg-neutral-700 animate-pulse w-20 h-6"></span></span>
+                        <span className="w-full text-xl flex flex-row gap-x-2 items-center px-4">Morpheme type: <span className="rounded-full bg-neutral-700 animate-pulse w-20 h-6"></span></span>
                         <span className="text-xl rounded-full bg-neutral-700 animate-pulse w-50 h-6 m-4"></span>
                     </div>
                 </div>

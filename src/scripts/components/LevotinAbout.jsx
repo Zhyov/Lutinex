@@ -33,9 +33,9 @@ export default function LevotinAbout() {
                                 <th>Transcription</th>
                             </tr>
                             <tr><td>α</td><td>/a/</td><td>specifically /ä/</td><td>a</td></tr>
-                            <tr><td>β</td><td>/β/</td><td>/v/ is an allophone</td><td>b or v</td></tr>
-                            <tr><td>γ</td><td>/ɣ/</td><td></td><td>g</td></tr>
-                            <tr><td>δ</td><td>/ð/</td><td></td><td>d</td></tr>
+                            <tr><td>β</td><td>/β/</td><td>/v/ and /b/ are an allophones</td><td>b or v</td></tr>
+                            <tr><td>γ</td><td>/ɣ/</td><td>/g/ is an allophone</td><td>g</td></tr>
+                            <tr><td>δ</td><td>/ð/</td><td>/d/ is an allophone</td><td>d</td></tr>
                             <tr><td>ε</td><td>/e/</td><td>specifically /e̞/</td><td>e</td></tr>
                             <tr><td>η</td><td>/eː/</td><td>long vowel, specifically /e̞ː/</td><td>ee or ē</td></tr>
                             <tr><td>ι</td><td>/i/</td><td></td><td>i</td></tr>
@@ -47,7 +47,7 @@ export default function LevotinAbout() {
                             <tr><td>π</td><td>/p/</td><td></td><td>p</td></tr>
                             <tr><td>ρ</td><td>/ɾ ~ r/</td><td>flap singleton, trill when geminate</td><td>r</td></tr>
                             <tr><td>σ</td><td>/s/</td><td>becomes ς word-finally*</td><td>s</td></tr>
-                            <tr><td>τ</td><td>/t/</td><td></td><td>t</td></tr>
+                            <tr><td>τ</td><td>/t/</td><td>specifically /t̪/</td><td>t</td></tr>
                             <tr><td>υ</td><td>/u/</td><td></td><td>u</td></tr>
                             <tr><td>φ</td><td>/ɸ/</td><td>/f/ is an allophone</td><td>f</td></tr>
                             <tr><td>χ</td><td>/x/</td><td>/h/ and /ç/ are allophones</td><td>x or h</td></tr>
@@ -73,7 +73,7 @@ export default function LevotinAbout() {
                                 <th>Coronal</th>
                                 <th>Velar</th>
                             </tr>
-                            <tr><td>p β ɸ m</td><td>t d s n l ɾ</td><td>k ɣ x</td></tr>
+                            <tr><td>β m p ɸ</td><td>ð l n ɾ s t</td><td>ɣ k x</td></tr>
                         </table>
                     </div>
                     <h1 className="text-2xl font-[600]">Phonotactics</h1>
@@ -100,11 +100,22 @@ export default function LevotinAbout() {
                     <ul className="list-disc list-inside font-normal text-[16px]">
                         <li>Nominative and accusative cases are zero-marked</li>
                         <li>Singular number is zero-marked</li>
+                        <li>Perfective aspect is zero-marked by default</li>
                         <li>Dual and plural are overtly marked</li>
                     </ul>
                     <h1 className="text-2xl font-[600]">Nominal Morphology</h1>
                     <span>
-                        Nouns may take number and genitive markers. Case is determined structurally rather than by overt marking.
+                        Nouns carry minimal morphology. Grammatical relations are not marked on nouns but on the verb, apart from the genitive marker <WordBox word={"μεκ"} />.
+                    </span>
+                    <h1 className="text-xl font-[600]">Nominal Template</h1>
+                    <span className="font-mono font-[600] text-sm">
+                        Root<br />
+                        (Number)<br />
+                        (Genitive)<br />
+                        (Quantifier)
+                    </span>
+                    <span>
+                        Nouns appear before the verbal complex when overt but may be omitted entirely.
                     </span>
                     <div className="overflow-x-auto">
                         <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
@@ -112,22 +123,49 @@ export default function LevotinAbout() {
                                 <th>Suffix</th>
                                 <th>Function</th>
                             </tr>
-                            <tr><td><WordBox word={"φυλ"} /></td><td>dual</td></tr>
-                            <tr><td><WordBox word={"τυχ"} /></td><td>plural</td></tr>
-                            <tr><td><WordBox word={"μεκ"} /></td><td>genitive</td></tr>
-                            <tr><td><WordBox word={"κκις"} /></td><td>universal quantifier ("every")</td></tr>
+                            <tr><td>φυλ</td><td>dual</td></tr>
+                            <tr><td>τυχ</td><td>plural</td></tr>
+                            <tr><td>μεκ</td><td>genitive</td></tr>
+                            <tr><td>κκις</td><td>universal quantifier ("every")</td></tr>
                         </table>
                     </div>
-                    <h1 className="text-2xl font-[600]">Pronominal System</h1>
+                    <h1 className="text-2xl font-[600]">Verbal Morphology</h1>
                     <span>
-                        Levotin distinguishes between accusative object pronouns, which are verb-bound prefixes, and nominative subject pronouns, which are verb-bound suffixes.
-                    </span>
-                    <h1 className="text-xl font-[600]">Accusative Object Pronouns</h1>
-                    <span>
-                        Accusative pronouns are verb-bound object prefixes. They attach to the beginning of the verbal complex and mark the object argument. They do not occur independently.
+                        The verb is the grammatical center of the clause. All argument indexing, valency changes, aspect, modality, polarity, tense, and mood are expressed within a single phonological word.
                     </span>
                     <span>
-                        Representative stems include:
+                        Each verbal complex follows a fixed morphological order. Every slot has exactly one grammatical function.
+                    </span>
+                    <h1 className="text-xl font-[600]">Canonical Verbal Template</h1>
+                    <span className="font-mono font-[600] text-sm">
+                        (Incorporated Nominal)<br />
+                        (Valency)<br />
+                        (Object Slot)<br />
+                        Verb Root<br />
+                        (Aspect)<br />
+                        (Modal)<br />
+                        (Negator)<br />
+                        Tense<br />
+                        Subject/Mood Slot
+                    </span>
+                    <span>
+                        Not all slots are required. Optional slots are indicated in parentheses. The focused nominal slot is used for topicalization and focus constructions.
+                    </span>
+                    <h1 className="text-xl font-[600]">Slot Descriptions</h1>
+                    <h1 className="text-lg font-[600]">Incorporated Nominal</h1>
+                    <span>
+                        Lexical objects may be phonologically incorporated before the verb. These behave as part of the verbal word. <WordBox word={"βυς"} /> may attach after the lexical object to mark focus.
+                    </span>
+                    <h1 className="text-lg font-[600]">Valency</h1>
+                    <span>
+                        Changes argument structure or promotes an oblique participant (recipient, instrument, beneficiary, etc.) to object status with the applicative marker <WordBox word={"λα"} />. Valency markers occur before the object slot, because they determine which participant becomes the indexed object.
+                    </span>
+                    <h1 className="text-lg font-[600]">Object Slot</h1>
+                    <span>
+                        This slot may contain a pronominal marker, the anaphoric marker, or an incorporated lexical noun. These elements behave as bound arguments and form part of the same phonological word as the verb.
+                    </span>
+                    <span>
+                        Representative pronominal forms:
                     </span>
                     <ul className="list-disc list-inside font-normal text-[16px]">
                         <li>1st person: <WordBox word={"μηχ"} /></li>
@@ -136,12 +174,44 @@ export default function LevotinAbout() {
                         <li>3rd person feminine: <WordBox word={"ννητ"} /></li>
                         <li>3rd person neuter: <WordBox word={"χας"} /></li>
                     </ul>
-                    <h1 className="text-xl font-[600]">Nominative Subject Pronouns</h1>
+                    <h1 className="text-lg font-[600]">Verb Root</h1>
                     <span>
-                        Nominative pronouns are verb-bound subject suffixes. They attach to the end of the verbal complex and index the subject.
+                        Lexical predicate, which is required.
+                    </span>
+                    <h1 className="text-lg font-[600]">Aspect</h1>
+                    <span>
+                        Internal temporal structure. <WordBox word={"καυ"} /> marks imperfective/ongoing aspect.
+                    </span>
+                    <h1 className="text-lg font-[600]">Modality</h1>
+                    <span>
+                        Ability or potentiality. <WordBox word={"ωπ"} /> marks potential/ability modality.
+                    </span>
+                    <h1 className="text-lg font-[600]">Negator</h1>
+                    <span>
+                        Verbal polarity. <WordBox word={"υν"} /> negates the verb.
+                    </span>
+                    <h1 className="text-lg font-[600]">Tense</h1>
+                    <span>
+                        Absolute time reference. Levotin has four tenses:
+                    </span>
+                    <div className="overflow-x-auto">
+                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                            <tr>
+                                <th>Morpheme</th>
+                                <th>Tense</th>
+                            </tr>
+                            <tr><td>ος</td><td>infinitive</td></tr>
+                            <tr><td>ης</td><td>present</td></tr>
+                            <tr><td>ις</td><td>past</td></tr>
+                            <tr><td>ως</td><td>future</td></tr>
+                        </table>
+                    </div>
+                    <h1 className="text-lg font-[600]">Subject/Mood Slot</h1>
+                    <span>
+                        This slot may contain: a pronominal marker, a question (σ-pronoun) form, the anaphoric marker, a lexical noun used as an overt subject, or an imperative marker.
                     </span>
                     <span>
-                        Representative agreement affixes:
+                        Representative pronominal forms:
                     </span>
                     <ul className="list-disc list-inside font-normal text-[16px]">
                         <li>1st person: <WordBox word={"λοφ"} /></li>
@@ -150,93 +220,129 @@ export default function LevotinAbout() {
                         <li>3rd person feminine: <WordBox word={"λιναφ"} /></li>
                         <li>3rd person neuter: <WordBox word={"λινηφ"} /></li>
                     </ul>
-                    <h1 className="text-2xl font-[600]">Verbal Morphology</h1>
+                    <h1 className="text-lg font-[600]">Ordering Principle</h1>
                     <span>
-                        Verbs are the grammatical core of the clause and host most inflectional material.
+                        Outer morphology introduces participants and argument structure, the root expresses the event, and inner suffixes modify how the event unfolds (aspect, modality, negation, tense). The final position anchors the clause with mood or agreement.
                     </span>
-                    <div className="overflow-x-auto">
-                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
-                            <tr>
-                                <th>Suffix</th>
-                                <th>Function</th>
-                            </tr>
-                            <tr><td><WordBox word={"ος"} /></td><td>infinitive</td></tr>
-                            <tr><td><WordBox word={"ης"} /></td><td>present</td></tr>
-                            <tr><td><WordBox word={"ις"} /></td><td>past</td></tr>
-                            <tr><td><WordBox word={"ως"} /></td><td>future</td></tr>
-                            <tr><td><WordBox word={"υν"} /></td><td>negator</td></tr>
-                        </table>
-                    </div>
+                    <h1 className="text-xl font-[600]">Examples</h1>
+                    <span className="text-lg font-[600]">
+                        Example 1: Simple
+                    </span>
+                    <span>
+                        <strong>Levotin:</strong> <WordBox word={"Πυιςλοφ"} />
+                    </span>
+                    <span>
+                        <strong>Latin:</strong> <WordBox word={"Pu-is-lof"} />
+                    </span>
+                    <span>
+                        <strong>Gloss:</strong> <WordBox word={"see-PST-1SG.N"} />
+                    </span>
+                    <span>
+                        Translation: "I saw"
+                    </span>
+                    <span className="text-lg font-[600]">
+                        Example 2: With object
+                    </span>
+                    <span>
+                        <strong>Levotin:</strong> <WordBox word={"Χιγπυιςλοφ"} />
+                    </span>
+                    <span>
+                        <strong>Latin:</strong> <WordBox word={"Hig-pu-is-lof"} />
+                    </span>
+                    <span>
+                        <strong>Gloss:</strong> <WordBox word={"3SG.M-see-PST-1SG.N"} />
+                    </span>
+                    <span>
+                        Translation: "I saw him"
+                    </span>
+                    <span className="text-lg font-[600]">
+                        Example 3: With applicative
+                    </span>
+                    <span>
+                        <strong>Levotin:</strong> <WordBox word={"Ννητλαχασδωνισλοφ"} />
+                    </span>
+                    <span>
+                        <strong>Latin:</strong> <WordBox word={"Nneet-la-has-doo-(n)is-lof"} />
+                    </span>
+                    <span>
+                        <strong>Gloss:</strong> <WordBox word={"3SG.F-APL-3SG.N-give-PST-1SG.N"} />
+                    </span>
+                    <span>
+                        Translation: "I gave it to her"
+                    </span>
+                    <span className="text-lg font-[600]">
+                        Example 4: With multiple morphology
+                    </span>
+                    <span>
+                        <strong>Levotin:</strong> <WordBox word={"Χιγλαταγικκαυνωπυνησλοφ"} />
+                    </span>
+                    <span>
+                        <strong>Latin:</strong> <WordBox word={"Hig-la-ta-gik-kau-(n)oop-un-ees-lof"} />
+                    </span>
+                    <span>
+                        <strong>Gloss:</strong> <WordBox word={"3SG.M-APL-DIST-talk-NPFV-ABIL-NEG-PRS-1SG.N"} />
+                    </span>
+                    <span>
+                        Translation: "I cannot be talking to him about that"
+                    </span>
+                    <span className="text-lg font-[600]">
+                        Example 5: Imperative
+                    </span>
+                    <span>
+                        <strong>Levotin:</strong> <WordBox word={"Πυνησραγ"} />
+                    </span>
+                    <span>
+                        <strong>Latin:</strong> <WordBox word={"Pu-(n)ees-rag"} />
+                    </span>
+                    <span>
+                        <strong>Gloss:</strong> <WordBox word={"look-PRS-IMP.2SG"} />
+                    </span>
+                    <span>
+                        Translation: "Look!"
+                    </span>
+                    <h1 className="text-2xl font-[600]">Anaphoric Reference</h1>
+                    <span>
+                        Levotin uses a general anaphoric element <WordBox word={"σο"} /> to avoid repeating previously mentioned arguments. This marker does not encode person, number, or grammatical role. Instead, it refers to a previously established argument. Its interpretation is determined by the slot it occupies and typically resolves to the nearest compatible antecedent.
+                    </span>
+                    <span className="text-lg font-[600]">
+                        Example
+                    </span>
+                    <span>
+                        <strong>Levotin:</strong> <WordBox word={"Μηχλιμησλοφταρπινησσο"} />
+                    </span>
+                    <span>
+                        <strong>Latin:</strong> <WordBox word={"Meeh-lim-ees-lof-tar-pin-ees-so"} />
+                    </span>
+                    <span>
+                        <strong>Gloss:</strong> <WordBox word={"1SG.N-like-PRS-1SG.N-because-beautiful-PRS-ANA"} />
+                    </span>
+                    <span>
+                        Translation: "I like myself because (I) am beautiful"
+                    </span>
                     <h1 className="text-3xl font-[600]">Syntax</h1>
                     <span>
                         Levotin syntax is built around a fixed-order verbal assembly, comparable to a sequence of morphological blocks. Each block has a defined grammatical role, and together they form a single phonological and morphological word. There is no phrase-level case syntax; argument structure is expressed entirely through bound morphology on the verb.
                     </span>
-                    <h1 className="text-2xl font-[600]">Verbal Assembly Structure</h1>
+                    <h1 className="text-2xl font-[600]">Clause Linking</h1>
                     <span>
-                        A Levotin clause is centered on the verbal complex, which follows this canonical order:
+                        Because each clause is already a complete verbal word, conjunctions attach inline between two verbal complexes rather than forming separate particles. Clause linking therefore behaves morphologically rather than syntactically free.
                     </span>
-                    <span className="font-mono font-[600]">
-                        [Object Index] - Verb Root - (Modifiers) - (Negator) - Tense - Subject Index
+                    <span className="font-mono font-[600] text-sm">
+                        [Clause]-CONJ-[Clause]
                     </span>
-                    <span>
-                        All components above are concatenated into one word.
-                    </span>
-                    <h1 className="text-xl font-[600]">Block Functions</h1>
+                    <h1 className="text-xl font-[600]">Coordinating</h1>
                     <ul className="list-disc list-inside font-normal text-[16px]">
-                        <li><strong>Object Index:</strong> Accusative pronoun prefix. Marks the object directly on the verb. Optional.</li>
-                        <li><strong>Verb Root:</strong> Lexical core of the predicate (e.g. <WordBox word={"γικ"} /> “talk”, <WordBox word={"πυ"} /> “see”). Required.</li>
-                        <li><strong>Modifiers:</strong> Optional derivational or descriptive material (e.g. amplifiers, incorporated elements).</li>
-                        <li><strong>Negator:</strong> Optional verbal negation affix (<WordBox word={"υν"} />).</li>
-                        <li><strong>Tense:</strong> Temporal marking (<WordBox word={"ης"} /> present, <WordBox word={"ις"} /> past, <WordBox word={"ως"} /> future).</li>
-                        <li><strong>Subject Index:</strong> Mandatory nominative agreement suffix indexing the subject.</li>
+                        <li><WordBox word={"κα"} />: and</li>
+                        <li><WordBox word={"ερ"} />: or</li>
+                        <li><WordBox word={"ρα"} />: but</li>
                     </ul>
-                    <h1 className="text-2xl font-[600]">Nominal Material</h1>
-                    <span>
-                        Lexical nouns are not required for grammatical completeness. When present, they appear before the verbal complex and serve discourse or clarification purposes only.
-                    </span>
-                    <span>
-                        Typical surface order:
-                    </span>
-                    <span className="font-mono font-[600]">
-                        (Adjective) - (Noun / Object) - (Number) | Verbal Complex
-                    </span>
+                    <h1 className="text-xl font-[600]">Subordinating</h1>
                     <ul className="list-disc list-inside font-normal text-[16px]">
-                        <li>Adjectives precede the nouns they modify</li>
-                        <li>Nouns do not carry case marking</li>
-                        <li>Objects may be expressed lexically, pronominally, or omitted entirely</li>
-                        <li>Subjects are normally expressed only via the subject index</li>
+                        <li><WordBox word={"ταρ"} />: because</li>
+                        <li><WordBox word={"συλ"} />: if/when</li>
+                        <li><WordBox word={"τοκ"} />: so that/therefore</li>
+                        <li><WordBox word={"μεν"} />: while/during</li>
                     </ul>
-                    <h1 className="text-2xl font-[600]">Worked Examples</h1>
-                    <span className="font-[600]">
-                        Example 1: Lexical Object, Overt Subject
-                    </span>
-                    <span>
-                        <strong>Levotin:</strong> <WordBox word={"Τεο πινδυσιτγικωσλινυφ."} />
-                    </span>
-                    <span>
-                        <strong>Latin:</strong> <WordBox word={"Teo pin-dusit-gik-oos-linuf"} />
-                    </span>
-                    <span>
-                        <strong>Gloss:</strong> <WordBox word={"Teo beautiful-woman-talk-FUT-3SG.M"} />
-                    </span>
-                    <span>
-                        Translation: "Teo will talk to the beautiful woman."
-                    </span>
-                    <span className="font-[600]">
-                        Example 2: No Lexical Arguments
-                    </span>
-                    <span>
-                        <strong>Levotin:</strong> <WordBox word={"Γικωσλινυφ."} />
-                    </span>
-                    <span>
-                        <strong>Latin:</strong> <WordBox word={"Gik-oos-linuf"} />
-                    </span>
-                    <span>
-                        <strong>Gloss:</strong> <WordBox word={"talk-FUT-3SG.M"} />
-                    </span>
-                    <span>
-                        Translation: "He will talk."
-                    </span>
                 </div>
             </div>
         </>

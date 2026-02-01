@@ -9,7 +9,12 @@ export default function LevotinWordCard({morpheme, meaning, type}) {
         )
     })
 
-    const leftColorClass = type === "noun" ? "border-l-noun has-[a:hover]:border-noun" : type === "verb" ? "border-l-verb has-[a:hover]:border-verb" : type === "adjective" ? "border-l-adjective has-[a:hover]:border-adjective" : type === "particle" ? "border-l-particle has-[a:hover]:border-particle" : "border-l-white has-[a:hover]:border-white"
+    const lexical = ["noun", "verb", "adjective"]
+    const nominal = ["number suffix", "case suffix", "derivational suffix", "information suffix", "nominal deixis", "nominal suffix"]
+    const verbal = ["valency marker", "subject marker", "object marker", "mood marker", "tense marker", "aspect marker", "modal marker", "polarity marker", "anaphoric index"]
+    const clause = ["conjunction", "particle"]
+
+    const leftColorClass = lexical.includes(type) ? "border-l-lexical has-[a:hover]:border-lexical" : nominal.includes(type) ? "border-l-nominal has-[a:hover]:border-nominal" : verbal.includes(type) ? "border-l-verbal has-[a:hover]:border-verbal" : clause.includes(type) ? "border-l-clause has-[a:hover]:border-clause" : "border-l-white has-[a:hover]:border-white"
 
     return (
         <li>
