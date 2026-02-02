@@ -129,6 +129,78 @@ export default function LevotinAbout() {
                             <tr><td>κκις</td><td>universal quantifier ("every")</td></tr>
                         </table>
                     </div>
+                    <h1 className="text-2xl font-[600]">Derivational Morphology</h1>
+                    <span>
+                        Levotin makes extensive use of derivational morphology to change lexical category or alter argument structure. Derivational markers attach directly to roots or stems and may occur inside the verbal complex. Unlike inflection, derivation changes the syntactic behavior of the base.
+                    </span>
+                    <h1 className="text-xl font-[600]">Derivational Template</h1>
+                    <span className="font-mono font-[600] text-sm">
+                        Root<br />
+                        (Derivation)<br />
+                        Inflection
+                    </span>
+                    <h1 className="text-xl font-[600]">Common Derivational Markers</h1>
+                    <div className="overflow-x-auto">
+                        <table className="min-w-max border-collapse border-cardborder border-2 text-[16px] **:border-2 **:border-cardborder **:px-2">
+                            <tr>
+                                <th>Suffix</th>
+                                <th>Function</th>
+                                <th>Effect</th>
+                            </tr>
+                            <tr><td>εν</td><td>nominalizer</td><td>verb turns into a dependent clause noun</td></tr>
+                            <tr><td>λα</td><td>applicative</td><td>promotes oblique participant to object status</td></tr>
+                            <tr><td>βυς</td><td>focus</td><td>marks constituent focus</td></tr>
+                        </table>
+                    </div>
+                    <h1 className="text-xl font-[600]">Nominalizer εν</h1>
+                    <span>
+                        εν attaches to a verb root to form a clause-level nominalization. It does not create a lexical noun. Instead, it converts the verb into a dependent predicate that behaves as an incorporated nominal argument.
+                    </span>
+                    <span>
+                        A nominalized verb:
+                    </span>
+                    <ul className="list-disc list-inside font-normal text-[16px]">
+                        <li>may incorporate objects</li>
+                        <li>may take valency morphology</li>
+                        <li>does not take tense or subject agreement</li>
+                        <li>functions as a single nominal slot inside another verb</li>
+                    </ul>
+                    <h1 className="text-lg font-[600]">Template</h1>
+                    <span className="font-mono font-[600] text-sm">
+                        (Incorporated Object)<br />
+                        Verb<br />
+                        εν
+                    </span>
+                    <span className="text-lg font-[600]">
+                        Example 1: Simple nominalization
+                    </span>
+                    <span>
+                        <strong>Levotin:</strong> <WordBox word={"Κωμογεν"} />
+                    </span>
+                    <span>
+                        <strong>Latin:</strong> <WordBox word={"Koom-og-en"} />
+                    </span>
+                    <span>
+                        <strong>Gloss:</strong> <WordBox word={"food-eat-NMLZ"} />
+                    </span>
+                    <span>
+                        Translation: "Eating food"
+                    </span>
+                    <span className="text-lg font-[600]">
+                        Example 2: Embedded nominalization
+                    </span>
+                    <span>
+                        <strong>Levotin:</strong> <WordBox word={"Κωμογενλαχιγπυισλοφ"} />
+                    </span>
+                    <span>
+                        <strong>Latin:</strong> <WordBox word={"Koom-og-en-la-hig-pu-is-lof"} />
+                    </span>
+                    <span>
+                        <strong>Gloss:</strong> <WordBox word={"food-eat-NMLZ-APL-3SG.M-eat-PST-1SG.N"} />
+                    </span>
+                    <span>
+                        Translation: "I saw him eating food"
+                    </span>
                     <h1 className="text-2xl font-[600]">Verbal Morphology</h1>
                     <span>
                         The verb is the grammatical center of the clause. All argument indexing, valency changes, aspect, modality, polarity, tense, and mood are expressed within a single phonological word.
@@ -162,7 +234,7 @@ export default function LevotinAbout() {
                     </span>
                     <h1 className="text-lg font-[600]">Object Slot</h1>
                     <span>
-                        This slot may contain a pronominal marker, the anaphoric marker, or an incorporated lexical noun. These elements behave as bound arguments and form part of the same phonological word as the verb.
+                        This slot contains a bound argument. It is phonologically part of the same word as the verb and cannot be separated by spaces. Objects must appear immediately adjacent to the verb or nominalized verb. Levotin does not permit free-standing objects inside the verbal complex.
                     </span>
                     <span>
                         Representative pronominal forms:
@@ -321,7 +393,7 @@ export default function LevotinAbout() {
                     </span>
                     <h1 className="text-3xl font-[600]">Syntax</h1>
                     <span>
-                        Levotin syntax is built around a fixed-order verbal assembly, comparable to a sequence of morphological blocks. Each block has a defined grammatical role, and together they form a single phonological and morphological word. There is no phrase-level case syntax; argument structure is expressed entirely through bound morphology on the verb.
+                        Levotin syntax is built around a fixed-order verbal assembly, comparable to a sequence of morphological blocks. Each clause forms exactly one phonological word. There is no phrase-level case syntax; argument structure is expressed entirely through bound morphology on the verb.
                     </span>
                     <h1 className="text-2xl font-[600]">Clause Linking</h1>
                     <span>
